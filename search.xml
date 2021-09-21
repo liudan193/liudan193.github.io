@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Anaconda使用教程</title>
+      <link href="/2021/09/21/Anaconda/"/>
+      <url>/2021/09/21/Anaconda/</url>
+      
+        <content type="html"><![CDATA[<h1 id="软件介绍"><a href="#软件介绍" class="headerlink" title="软件介绍"></a>软件介绍</h1><p>Anaconda 就是可以便捷获取包且对包能够进行管理，同时对环境可以统一管理的发行版本。Anaconda包含了conda、Python在内的超过180个科学包及其依赖项。</p><p>使用conda来方便地在不同环境之间进行切换，更简单地管理Python的虚拟环境。</p><p>Anaconda有图形界面和命令行两种方式，由于图形界面运行较慢，因此常使用命令行的方式进行虚拟环境的管理。</p><h1 id="使用教程-指令"><a href="#使用教程-指令" class="headerlink" title="使用教程 - 指令"></a>使用教程 - 指令</h1><p>命令行界面 - Windows用户打开“Anaconda Prompt”进行操作，macOS和Linux用户打开“Terminal”（“终端”）进行操作。</p><h2 id="管理软件"><a href="#管理软件" class="headerlink" title="管理软件"></a>管理软件</h2><ol><li>显示当前安装conda的版本号  <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda --version</span><br></pre></td></tr></table></figure></li><li>更新conda至最新版本<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda update conda</span><br></pre></td></tr></table></figure></li><li>查看conda帮助信息<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda --<span class="built_in">help</span></span><br><span class="line">或</span><br><span class="line">conda -h</span><br></pre></td></tr></table></figure></li><li>卸载conda</li></ol><p>① Linux 或 macOS</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/anaconda2</span><br><span class="line">或</span><br><span class="line">rm -rf ~/anaconda3</span><br></pre></td></tr></table></figure><p>即删除Anaconda的安装目录。根据安装的Anaconda版本选择相应的卸载命令。  </p><p>② Windows<br>控制面板 → 添加或删除程序 → 选择“Python X.X (Anaconda)” → 点击“删除程序”</p><ol start="5"><li>换源</li></ol><p>建议进图形界面换源<br>依次点击 Channels -&gt; Add -&gt; 输入源 -&gt; 敲击Enter<br>重复三次该操作,分别输入  </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/</span><br><span class="line">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge</span><br><span class="line">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br></pre></td></tr></table></figure><p>点击右下角的Update channels</p><h2 id="管理环境"><a href="#管理环境" class="headerlink" title="管理环境"></a>管理环境</h2><p>以下均为Windows操作</p><ol><li>创建新环境<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda create --name env_name python=x.x</span><br><span class="line">如:</span><br><span class="line">conda create --name DataScience python=<span class="number">3</span>.<span class="number">9</span></span><br></pre></td></tr></table></figure></li><li>切换环境<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">activate DataScience</span><br><span class="line">会切换到DataScience环境,</span><br><span class="line">命令行会显示(DataScience) C:\Users\username&gt;</span><br></pre></td></tr></table></figure></li><li>退出环境<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate</span><br></pre></td></tr></table></figure></li><li>列出已经创建的环境<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env list</span><br></pre></td></tr></table></figure></li><li>复制环境<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create --name NewDataScience --clone DataScience</span><br></pre></td></tr></table></figure></li><li>删除环境<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove --name DataScience --all</span><br></pre></td></tr></table></figure></li></ol><h2 id="管理包"><a href="#管理包" class="headerlink" title="管理包"></a>管理包</h2><ol><li>安装包<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">conda install --name env_name package_name</span><br><span class="line">表示在env_name这个虚拟环境中安装package-name这个包</span><br><span class="line"></span><br><span class="line">已经进入某个环境之后,可以直接:</span><br><span class="line">conda install numpy</span><br><span class="line">表示在DataScience里面安装numpy这个包</span><br></pre></td></tr></table></figure></li></ol><br><p>还有一种可能,conda无法安装包,需要使用pip安装</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install package_name</span><br></pre></td></tr></table></figure><p>如果想在指定环境中使用pip进行安装包，则需要先切换到指定环境中，再使用pip命令安装包。</p><ol start="2"><li><p>列出已经安装的包</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure></li><li><p>精确查找可用包</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda search --full-name package_name</span><br><span class="line">即查找名为package_name的包</span><br></pre></td></tr></table></figure></li><li><p>模糊查找</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda search text</span><br><span class="line">即查找包名含text的包</span><br></pre></td></tr></table></figure><p>对于一些不熟悉的包,也可以直接到图形界面搜索</p></li><li><p>卸载包</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda remove package_name</span><br><span class="line">卸载当前环境的包</span><br></pre></td></tr></table></figure></li><li><p>更新包</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">conda update --all</span><br><span class="line">更新所有包</span><br><span class="line"></span><br><span class="line">conda update package_name</span><br><span class="line">只更新某个包</span><br></pre></td></tr></table></figure></li></ol><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://zhuanlan.zhihu.com/p/32925500">Anaconda介绍、安装及使用教程</a><br><a href="https://blog.csdn.net/ITLearnHall/article/details/81708148">Anaconda详细安装及使用教程（带图文）</a><br><a href="https://blog.csdn.net/qq_43198568/article/details/105626024">Anaconda之conda换国内源</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件使用 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>逻辑回归</title>
       <link href="/2021/09/20/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/"/>
       <url>/2021/09/20/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/</url>
@@ -48,7 +67,7 @@
     
     
     <entry>
-      <title>文章标题</title>
+      <title>关联算法</title>
       <link href="/2021/09/19/%E5%85%B3%E8%81%94%E7%AE%97%E6%B3%95/"/>
       <url>/2021/09/19/%E5%85%B3%E8%81%94%E7%AE%97%E6%B3%95/</url>
       
@@ -57,14 +76,14 @@
       
       <categories>
           
-          <category> 文章分类 </category>
+          <category> 数据挖掘 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 文章标签 </tag>
+            <tag> 坏数据 </tag>
             
         </tags>
       
@@ -73,25 +92,19 @@
     
     
     <entry>
-      <title>文章标题</title>
+      <title>时间序列</title>
       <link href="/2021/09/19/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97/"/>
       <url>/2021/09/19/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="使用时间序列全程实践（以ARIMA为例）"><a href="#使用时间序列全程实践（以ARIMA为例）" class="headerlink" title="使用时间序列全程实践（以ARIMA为例）"></a>使用时间序列全程实践（以ARIMA为例）</h1><p>案例：2015/1/1~2015/2/6某餐厅销售数据进行建模</p><h1 id="时间序列的几种方法（Python实现）"><a href="#时间序列的几种方法（Python实现）" class="headerlink" title="时间序列的几种方法（Python实现）"></a>时间序列的几种方法（Python实现）</h1><h1 id="Python里面的时间序列包"><a href="#Python里面的时间序列包" class="headerlink" title="Python里面的时间序列包"></a>Python里面的时间序列包</h1>]]></content>
       
       
       <categories>
           
-          <category> 文章分类 </category>
+          <category> 数据挖掘 </category>
           
       </categories>
       
-      
-        <tags>
-            
-            <tag> 文章标签 </tag>
-            
-        </tags>
       
     </entry>
     
