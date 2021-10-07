@@ -4,6 +4,63 @@
   
     
     <entry>
+      <title>MIPS指令详解</title>
+      <link href="/2021/10/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E4%BA%8C%E7%AB%A0-MIPS%E6%8C%87%E4%BB%A4/"/>
+      <url>/2021/10/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E4%BA%8C%E7%AB%A0-MIPS%E6%8C%87%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<h1 id="MIPS指令的详解"><a href="#MIPS指令的详解" class="headerlink" title="MIPS指令的详解"></a>MIPS指令的详解</h1><p>本文在阅读了《计算机组成与设计：硬件/软件接口》第二章节，了解一些MIPS指令的基础上阅读。</p><h1 id="32个寄存器（register）"><a href="#32个寄存器（register）" class="headerlink" title="32个寄存器（register）"></a>32个寄存器（register）</h1><p>MIPS有32个通用寄存器（$0-$31），某个寄存器本身并没有指定的功能，但是在实际使用中，为了方便和统一，每个寄存器都根据约定被赋予了指定的功能。</p><p>在使用中，既可以使用数字编号，也可以使用约定好的符号（也是建议的用法）。</p><p>32个寄存器的数字编号、符号、功能的对应关系如下：</p><table><thead><tr><th>编号</th><th>符号</th><th>功能</th></tr></thead><tbody><tr><td>$0</td><td>$zero</td><td>常量0(constant value 0)</td></tr><tr><td>$1</td><td>$at</td><td>保留给汇编器(Reserved for assembler)的，没啥用</td></tr><tr><td>$2-$3</td><td>$v0-$v1</td><td>函数调用返回值(values for results and expression evaluation)</td></tr><tr><td>$4-$7</td><td>$a0-$a3</td><td>函数调用参数(arguments)</td></tr><tr><td>$8-$15</td><td>$t0-$t7</td><td>暂时的(temporary)</td></tr><tr><td>$16-$23</td><td>$s0-$s7</td><td>保存的(或如果用，需要SAVE/RESTORE的)(saved)</td></tr><tr><td>$24-$25</td><td>$t8-$t9</td><td>暂时的(temporary)</td></tr><tr><td>$28</td><td>$gp</td><td>全局指针(Global Pointer)</td></tr><tr><td>$29</td><td>$sp</td><td>堆栈指针(Stack Pointer)</td></tr><tr><td>$30</td><td>$fp</td><td>帧指针(Frame Pointer)</td></tr><tr><td>$31</td><td>$ra</td><td>返回地址(return address)</td></tr></tbody></table><h1 id="寻址方式"><a href="#寻址方式" class="headerlink" title="寻址方式"></a>寻址方式</h1><p>寄存器的数量有限，在面对成千上万的数据的时候会不够用，那么是如何解决这个问题的呢？</p><p>在计算机中，存储器有数十亿的容量，因此太多的数据是存放在存储器中的。由于<strong>MIPS的算数操作只能操作寄存器中的数据</strong>，因此MIPS指令有一套寻址的操作。</p><p>在MIPS中，可以认为某个寄存器是<code>基址</code>，存储器是一个<code>一维的数组</code>，下标从零开始。如a[0]、a[1]、a[2]、a[3]……</p><p>在使用的过程中，可以采取<code>偏移量（基址）</code>的方式，如：<br>|存储器地址|a[0]|a[1]|a[2]|…|a[n]|<br>|-|-|-|-|-|-|<br>|<strong>寻址方式</strong>|<strong>0($s3)</strong>|<strong>4($s3)</strong>|<strong>8($s3)</strong>|…|<strong>n($s3)</strong>|</p><hr><p>至于为什么是四个一组:  </p><p>首先解释计算机中的<code>字</code>的概念：在计算机中，一串数码作为一个整体来处理或运算的，称为一个计算机字，简称字。  </p><p><strong>因此每次处理的应该为一个字。</strong></p><p>在MIPS中，寄存器的大小为<code>32位（bit）</code>，因此32为一组的情况经常出现，<strong>MIPS中一个字就设定为32bit</strong>，而 32bit-&gt;4个字节-&gt;1个字 ，<strong>又因为MIPS为字节寻址（按照字节编址）</strong>，因此每次就是4个字节一组，所以要乘以4。</p><hr><h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><p>在MIPS中，指令分为三类，即三种指令格式，分别为R(register 寄存器)、I(immediate 立即数)、J(jump 跳转命令)三种类型。</p><p><strong>每种指令格式均为32bit的。</strong></p><h2 id="R型-用于寄存器"><a href="#R型-用于寄存器" class="headerlink" title="R型 - 用于寄存器"></a>R型 - 用于寄存器</h2><table><thead><tr><th>字段</th><th align="center">opcode</th><th align="center">rs</th><th align="center">rt</th><th align="center">rd</th><th align="center">shamt</th><th align="center">funct</th></tr></thead><tbody><tr><td>占位(bit)</td><td align="center">6</td><td align="center">5</td><td align="center">5</td><td align="center">5</td><td align="center">5</td><td align="center">6</td></tr></tbody></table><p>每个字段的解释：</p><ul><li>opcode: 操作码，所有R型指令都全为0</li><li>rs：寄存器编号，对应第一个源操作数（registrer source）</li><li>rt：寄存器编号，对应第二个源操作数（register target）</li><li>rd：寄存器编号，对应结果（register destination）</li><li>shamt：偏移量，只在移位指令中使用，如sll、srl（shift amount）</li><li>funct：功能码，指定指令的具体功能，如add、sub（function）</li></ul><h3 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h3><table><thead><tr><th>指令</th><th>功能</th></tr></thead><tbody><tr><td>add $s1,$s2,$3</td><td>$s1 = $2 + $3</td></tr><tr><td>sub $s1,$s2,$3</td><td>$s1 = $2 - $3</td></tr></tbody></table><h3 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h3><table><thead><tr><th>指令</th><th>功能</th></tr></thead><tbody><tr><td>and $s1,$s2,$3</td><td>$s1 = $2 &amp; $3</td></tr><tr><td>or $s1,$s2,$3</td><td>$s1 = $2 &#124; $3</td></tr><tr><td>nor $s1,$s2,$3</td><td>$s1 = ~($2 &#124; $3)（或非，不是非）</td></tr></tbody></table><h3 id="移位指令（R特有，I没有）"><a href="#移位指令（R特有，I没有）" class="headerlink" title="移位指令（R特有，I没有）"></a>移位指令（R特有，I没有）</h3><table><thead><tr><th>指令</th><th>功能</th></tr></thead><tbody><tr><td>sll $s1,$s2,10</td><td>$s1 = $2 &lt;&lt; 10（shift left logical）</td></tr><tr><td>srl $s1,$s2,10</td><td>$s1 = $2 &gt;&gt; 10</td></tr></tbody></table><p><strong>解释：</strong><br>无符号的二进制数左移一位相当于将该数乘以2，左移三位相当于乘以8；类比10进制，左移一位相当于乘以10，两位相当于乘以100。</p><h3 id="判断大小"><a href="#判断大小" class="headerlink" title="判断大小"></a>判断大小</h3><table><thead><tr><th>指令</th><th>功能</th></tr></thead><tbody><tr><td>slt $s1,$s2,$s3</td><td>如果 $s2&lt;$s3, $s1 为 1; 否则为 0 （set on less than）</td></tr></tbody></table><h3 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h3><table><thead><tr><th>指令</th><th>功能</th></tr></thead><tbody><tr><td>jr $ra</td><td>go to $ra</td></tr></tbody></table><h2 id="I型-用于立即数"><a href="#I型-用于立即数" class="headerlink" title="I型 - 用于立即数"></a>I型 - 用于立即数</h2><table><thead><tr><th>字段</th><th align="center">opcode</th><th align="center">rs</th><th align="center">rt</th><th align="center">immdiate</th></tr></thead><tbody><tr><td>占位(bit)</td><td align="center">6</td><td align="center">5</td><td align="center">5</td><td align="center">16</td></tr></tbody></table><p>每个字段的解释：</p><ul><li>opcode: 操作码</li><li>rs：第一个源操作数，是寄存器操作数（registrer source）</li><li>rt：目的寄存器编号，用来保存运算结果（register target）</li><li>immediate：第二个源操作数，立即数</li></ul><h3 id="存字、取字（I特有，R没有）"><a href="#存字、取字（I特有，R没有）" class="headerlink" title="存字、取字（I特有，R没有）"></a>存字、取字（I特有，R没有）</h3><table><thead><tr><th>指令</th><th>功能</th></tr></thead><tbody><tr><td>lw $s1,20($s2)</td><td>$s1 = Memory[$s2 + 20]（load word）</td></tr><tr><td>sw $s1,20($s2)</td><td>Memory[$s2 + 20] = $s1（store word）</td></tr></tbody></table><h3 id="决策指令（I特有，R没有）"><a href="#决策指令（I特有，R没有）" class="headerlink" title="决策指令（I特有，R没有）"></a>决策指令（I特有，R没有）</h3><table><thead><tr><th>指令</th><th>功能</th></tr></thead><tbody><tr><td>beq $s1,$s2,25</td><td>如果$s1 == $s2，go to PC+4+4*25（binary equal）</td></tr><tr><td>bne $s1,$s2,26</td><td>如果$s1 != $s2，go to PC+4+4*26（binary not equal）</td></tr></tbody></table><h3 id="算术运算-1"><a href="#算术运算-1" class="headerlink" title="算术运算"></a>算术运算</h3><table><thead><tr><th>指令</th><th>功能</th></tr></thead><tbody><tr><td>addi $s1,$s2,20</td><td>$s1 = $2 + 20</td></tr></tbody></table><h3 id="逻辑运算-1"><a href="#逻辑运算-1" class="headerlink" title="逻辑运算"></a>逻辑运算</h3><table><thead><tr><th>指令</th><th>功能</th></tr></thead><tbody><tr><td>andi $s1,$s2,20</td><td>$s1 = $2 &amp; 20</td></tr><tr><td>ori $s1,$s2,20</td><td>$s1 = $2 &#124; 20</td></tr></tbody></table><h3 id="判断大小-1"><a href="#判断大小-1" class="headerlink" title="判断大小"></a>判断大小</h3><table><thead><tr><th>指令</th><th>功能</th></tr></thead><tbody><tr><td>slti $s1,$s2,20</td><td>如果 $s2&lt;20, $s1 为 1; 否则为 0 （set on less than）</td></tr></tbody></table><h2 id="J型-用于跳转指令"><a href="#J型-用于跳转指令" class="headerlink" title="J型 - 用于跳转指令"></a>J型 - 用于跳转指令</h2><table><thead><tr><th>字段</th><th align="center">opcode</th><th align="center">immdiate</th></tr></thead><tbody><tr><td>占位(bit)</td><td align="center">6</td><td align="center">26</td></tr></tbody></table><p>每个字段的解释：</p><ul><li>opcode: 操作码</li><li>immediate：立即数</li></ul><h3 id="J型指令"><a href="#J型指令" class="headerlink" title="J型指令"></a>J型指令</h3><table><thead><tr><th>指令</th><th>功能</th></tr></thead><tbody><tr><td>j 2500</td><td>goto 4*2500</td></tr><tr><td>jal 2500</td><td>$ra = PC + 4，go to 4*2500</td></tr></tbody></table><h1 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h1><p>《计算机组成与设计：硬件/软件接口》<br><a href="https://blog.csdn.net/weixin_46308081/article/details/115798605">MIPS指令详解</a>  </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机组成原理 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>transforms</title>
+      <link href="/2021/10/05/transforms/"/>
+      <url>/2021/10/05/transforms/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我们知道，在计算机视觉中处理的数据集有很大一部分是图片类型的，如果获取的数据是格式或者大小不一的图片，则需要进行归一化和大小缩放等操作，这些是常用的数据预处理方法。如果参与模型训练中的图片数据非常有限，则需要通过对有限的图片数据进行各种变换，如缩小或者放大图片的大小、对图片进行水平或者垂直翻转等，这些都是数据增强的方法。庆幸的是，这些方法在 <code>torch.transforms</code> 中都能找到，在 <code>torch.transforms</code> 中有大量的数据变换类，有很大一部分可以用于实现数据预处理（Data Preprocessing）和数据增广（Data Argumentation）。</p><h1 id="torchvision-transforms常用变换类"><a href="#torchvision-transforms常用变换类" class="headerlink" title="torchvision.transforms常用变换类"></a>torchvision.transforms常用变换类</h1><h2 id="一种组合多种transforms的方法——transforms-Compose"><a href="#一种组合多种transforms的方法——transforms-Compose" class="headerlink" title="一种组合多种transforms的方法——transforms.Compose"></a>一种组合多种transforms的方法——transforms.Compose</h2><p>transforms.Compose类看作一种容器，它能够同时对多种数据变换进行组合。传入的参数是一个列表，列表中的元素就是对载入的数据进行的各种变换操作。</p><h2 id="多种方法"><a href="#多种方法" class="headerlink" title="多种方法"></a>多种方法</h2><p>见<a href="https://blog.csdn.net/qq_37555071/article/details/107532319">原文链接</a>或者<a href="https://pytorch.org/vision/stable/transforms.html">官方文档</a></p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://blog.csdn.net/qq_37555071/article/details/107532319">原文链接</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> PyTorch </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>GPU训练教程</title>
+      <link href="/2021/10/05/GPU%E8%AE%AD%E7%BB%83%E6%95%99%E7%A8%8B/"/>
+      <url>/2021/10/05/GPU%E8%AE%AD%E7%BB%83%E6%95%99%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="使用GPU"><a href="#使用GPU" class="headerlink" title="使用GPU"></a>使用GPU</h1><ol><li><p>确定能不能用</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">device = torch.device(<span class="string">&quot;cuda:0&quot;</span> <span class="keyword">if</span> torch.cuda.is_available() <span class="keyword">else</span> <span class="string">&quot;cpu&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(device)</span><br></pre></td></tr></table></figure></li><li><p>将网络转移到GPU中</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net = Net()</span><br><span class="line">net = net.to(device)</span><br></pre></td></tr></table></figure></li><li><p>将每个batch中的inputs和label转移到GPU中</p></li></ol><p>注意<code>.to()</code>方法不会直接改变原值，需要通过赋值，使得返回值被接受（tensor.to() 这个函数功能是产生一个新的tensor，并不会改变原数据）。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">inputs = inputs.to(device)</span><br><span class="line">labels = labels.to(device)</span><br></pre></td></tr></table></figure><h1 id="提高GPU利用率"><a href="#提高GPU利用率" class="headerlink" title="提高GPU利用率"></a>提高GPU利用率</h1><p>需要在Dataloader中进行数据传输方面的设置。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">torch.utils.data.DataLoader(datasets,</span><br><span class="line">                            batch_size=batch_size, </span><br><span class="line">                            shuffle=<span class="literal">True</span>,</span><br><span class="line">                            num_workers=<span class="number">8</span>,</span><br><span class="line">                            pin_memory=<span class="literal">True</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>其中：<br>num_workers=8：设置线程数<br>pin_memory=True：由CPU传输的数据不需要经过RAM，直接映射到GPU上。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> PyTorch </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>神经网络工具箱</title>
       <link href="/2021/10/04/Pytorch-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7%E7%AE%B1nn/"/>
       <url>/2021/10/04/Pytorch-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7%E7%AE%B1nn/</url>
