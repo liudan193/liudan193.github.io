@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2021/09/18/fnZ96hYTpmQjLda.jpg">
 <meta property="article:published_time" content="2021-10-07T12:05:11.000Z">
-<meta property="article:modified_time" content="2021-10-08T07:52:24.014Z">
+<meta property="article:modified_time" content="2021-10-08T09:20:10.058Z">
 <meta property="article:author" content="LiuDan">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2021/09/18/fnZ96hYTpmQjLda.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://liudan193.github.io/2021/10/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E4%BA%8C%E7%AB%A0-MIPS%E6%8C%87%E4%BB%A4/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
@@ -57,7 +57,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2021-10-08 15:52:24'
+  postUpdate: '2021-10-08 17:20:10'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -146,7 +146,7 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/09/18/W8oUmGv79hdVlni.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment-alt"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/daohang/"><i class="fa-fw https://i.loli.net/2021/09/18/cgkXrKMlSVt1yDa.png"></i><span> 导航站</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2021/09/18/fnZ96hYTpmQjLda.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">流丹</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment-alt"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/daohang/"><i class="fa-fw https://i.loli.net/2021/09/18/cgkXrKMlSVt1yDa.png"></i><span> 导航站</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MIPS指令的详解</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-10-07T12:05:11.000Z" title="发表于 2021-10-07 20:05:11">2021-10-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-10-08T07:52:24.014Z" title="更新于 2021-10-08 15:52:24">2021-10-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="MIPS指令的详解"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>MIPS指令的详解</h1>
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/09/18/W8oUmGv79hdVlni.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment-alt"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/daohang/"><i class="fa-fw https://i.loli.net/2021/09/18/cgkXrKMlSVt1yDa.png"></i><span> 导航站</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2021/09/18/fnZ96hYTpmQjLda.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">流丹</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment-alt"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/daohang/"><i class="fa-fw https://i.loli.net/2021/09/18/cgkXrKMlSVt1yDa.png"></i><span> 导航站</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MIPS指令的详解</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-10-07T12:05:11.000Z" title="发表于 2021-10-07 20:05:11">2021-10-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-10-08T09:20:10.058Z" title="更新于 2021-10-08 17:20:10">2021-10-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="MIPS指令的详解"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>MIPS指令的详解</h1>
 <p>本文在阅读了《计算机组成与设计：硬件/软件接口》第二章节，了解一些MIPS指令的基础上阅读。</p>
 <h1>32个寄存器（register）</h1>
 <p>MIPS有32个通用寄存器（$0-$31），某个寄存器本身并没有指定的功能，但是在实际使用中，为了方便和统一，每个寄存器都根据约定被赋予了指定的功能。</p>
@@ -173,27 +173,27 @@
 </tr>
 <tr>
 <td>$2-$3</td>
-<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mn>0</mn><mo>−</mo></mrow><annotation encoding="application/x-tex">v0-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord">0</span><span class="mord">−</span></span></span></span>v1</td>
+<td>$v0-$v1</td>
 <td>函数调用返回值(values for results and expression evaluation)</td>
 </tr>
 <tr>
 <td>$4-$7</td>
-<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mn>0</mn><mo>−</mo></mrow><annotation encoding="application/x-tex">a0-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">a</span><span class="mord">0</span><span class="mord">−</span></span></span></span>a3</td>
+<td>$a0-$a3</td>
 <td>函数调用参数(arguments)</td>
 </tr>
 <tr>
 <td>$8-$15</td>
-<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mn>0</mn><mo>−</mo></mrow><annotation encoding="application/x-tex">t0-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">t</span><span class="mord">0</span><span class="mord">−</span></span></span></span>t7</td>
+<td>$t0-$t7</td>
 <td>暂时的(temporary)</td>
 </tr>
 <tr>
 <td>$16-$23</td>
-<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>0</mn><mo>−</mo></mrow><annotation encoding="application/x-tex">s0-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">s</span><span class="mord">0</span><span class="mord">−</span></span></span></span>s7</td>
+<td>$s0-$s7</td>
 <td>保存的(或如果用，需要SAVE/RESTORE的)(saved)</td>
 </tr>
 <tr>
 <td>$24-$25</td>
-<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mn>8</mn><mo>−</mo></mrow><annotation encoding="application/x-tex">t8-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">t</span><span class="mord">8</span><span class="mord">−</span></span></span></span>t9</td>
+<td>$t8-$t9</td>
 <td>暂时的(temporary)</td>
 </tr>
 <tr>
@@ -223,13 +223,13 @@
 <p>MIPS为32位立即数专门设置了<code>lui</code>指令，用于<code>读取立即数的高十六位，低十六位全为0</code>，再组合其他命令（比如<code>ori</code>）设置剩下的低十六位。</p>
 <p>例如：将下面的32位常量存到寄存器$s0中<br>
 0000 0000 0011 1101 000 1001 0000 0000</p>
-<pre><code>lui $s0, 61
-# 执行该语句之后，$s0内的值为：
+<pre><code>lui \$s0, 61
+# 执行该语句之后，\$s0内的值为：
 # 0000 0000 0011 1101 0000 0000 0000 0000
 
-ori $s0, $s0, 2304
+ori \$s0, \$s0, 2304
 # 通过执行或操作，将剩下的低16位转换为应该的数值
-# 经过或操作之后，$s0的值为：
+# 经过或操作之后，\$s0的值为：
 # 0000 0000 0011 1101 000 1001 0000 0000
 </code></pre>
 <h1>指令</h1>
@@ -279,11 +279,11 @@ ori $s0, $s0, 2304
 </thead>
 <tbody>
 <tr>
-<td>add <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>1</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">s1,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mpunct">,</span></span></span></span>s2,$3</td>
+<td>add $s1,$s2,$3</td>
 <td>$s1 = $2 + $3</td>
 </tr>
 <tr>
-<td>sub <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>1</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">s1,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mpunct">,</span></span></span></span>s2,$3</td>
+<td>sub $s1,$s2,$3</td>
 <td>$s1 = $2 - $3</td>
 </tr>
 </tbody>
@@ -298,15 +298,15 @@ ori $s0, $s0, 2304
 </thead>
 <tbody>
 <tr>
-<td>and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>1</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">s1,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mpunct">,</span></span></span></span>s2,$3</td>
+<td>and $s1,$s2,$3</td>
 <td>$s1 = $2 &amp; $3</td>
 </tr>
 <tr>
-<td>or <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>1</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">s1,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mpunct">,</span></span></span></span>s2,$3</td>
+<td>or $s1,$s2,$3</td>
 <td>$s1 = $2 | $3</td>
 </tr>
 <tr>
-<td>nor <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>1</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">s1,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mpunct">,</span></span></span></span>s2,$3</td>
+<td>nor $s1,$s2,$3</td>
 <td>$s1 = ~($2 | $3)（或非，不是非）</td>
 </tr>
 </tbody>
@@ -321,11 +321,11 @@ ori $s0, $s0, 2304
 </thead>
 <tbody>
 <tr>
-<td>sll <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>1</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">s1,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mpunct">,</span></span></span></span>s2,10</td>
+<td>sll $s1,$s2,10</td>
 <td>$s1 = $2 &lt;&lt; 10（shift left logical）</td>
 </tr>
 <tr>
-<td>srl <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>1</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">s1,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mpunct">,</span></span></span></span>s2,10</td>
+<td>srl $s1,$s2,10</td>
 <td>$s1 = $2 &gt;&gt; 10</td>
 </tr>
 </tbody>
@@ -342,8 +342,8 @@ ori $s0, $s0, 2304
 </thead>
 <tbody>
 <tr>
-<td>slt <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>1</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">s1,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mpunct">,</span></span></span></span>s2,$s3</td>
-<td>如果 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>2</mn><mo>&lt;</mo></mrow><annotation encoding="application/x-tex">s2&lt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68354em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">s</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span></span></span></span>s3, $s1 为 1; 否则为 0 （set on less than）</td>
+<td>slt $s1,$s2,$s3</td>
+<td>如果 $s2&lt;$s3, $s1 为 1; 否则为 0 （set on less than）</td>
 </tr>
 </tbody>
 </table>
@@ -400,11 +400,11 @@ ori $s0, $s0, 2304
 </thead>
 <tbody>
 <tr>
-<td>lw <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>1</mn><mo separator="true">,</mo><mn>20</mn><mo stretchy="false">(</mo></mrow><annotation encoding="application/x-tex">s1,20(</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">20</span><span class="mopen">(</span></span></span></span>s2)</td>
-<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>1</mn><mo>=</mo><mi>M</mi><mi>e</mi><mi>m</mi><mi>o</mi><mi>r</mi><mi>y</mi><mo stretchy="false">[</mo></mrow><annotation encoding="application/x-tex">s1 = Memory[</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal">e</span><span class="mord mathnormal">m</span><span class="mord mathnormal" style="margin-right:0.03588em;">ory</span><span class="mopen">[</span></span></span></span>s2 + 20]（load word）</td>
+<td>lw $s1,20($s2)</td>
+<td>$s1 = Memory[$s2 + 20]（load word）</td>
 </tr>
 <tr>
-<td>sw <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>1</mn><mo separator="true">,</mo><mn>20</mn><mo stretchy="false">(</mo></mrow><annotation encoding="application/x-tex">s1,20(</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">20</span><span class="mopen">(</span></span></span></span>s2)</td>
+<td>sw $s1,20($s2)</td>
 <td>Memory[$s2 + 20] = $s1（store word）</td>
 </tr>
 </tbody>
@@ -419,11 +419,11 @@ ori $s0, $s0, 2304
 </thead>
 <tbody>
 <tr>
-<td>beq <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>1</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">s1,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mpunct">,</span></span></span></span>s2,25</td>
+<td>beq $s1,$s2,25</td>
 <td>如果$s1 == $s2，go to PC+4+4*25（binary equal）</td>
 </tr>
 <tr>
-<td>bne <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>1</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">s1,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mpunct">,</span></span></span></span>s2,26</td>
+<td>bne $s1,$s2,26</td>
 <td>如果$s1 != $s2，go to PC+4+4*26（binary not equal）</td>
 </tr>
 </tbody>
@@ -438,7 +438,7 @@ ori $s0, $s0, 2304
 </thead>
 <tbody>
 <tr>
-<td>addi <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>1</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">s1,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mpunct">,</span></span></span></span>s2,20</td>
+<td>addi $s1,$s2,20</td>
 <td>$s1 = $2 + 20</td>
 </tr>
 </tbody>
@@ -453,11 +453,11 @@ ori $s0, $s0, 2304
 </thead>
 <tbody>
 <tr>
-<td>andi <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>1</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">s1,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mpunct">,</span></span></span></span>s2,20</td>
+<td>andi $s1,$s2,20</td>
 <td>$s1 = $2 &amp; 20</td>
 </tr>
 <tr>
-<td>ori <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>1</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">s1,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mpunct">,</span></span></span></span>s2,20</td>
+<td>ori $s1,$s2,20</td>
 <td>$s1 = $2 | 20</td>
 </tr>
 </tbody>
@@ -472,7 +472,7 @@ ori $s0, $s0, 2304
 </thead>
 <tbody>
 <tr>
-<td>slti <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mn>1</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">s1,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mpunct">,</span></span></span></span>s2,20</td>
+<td>slti $s1,$s2,20</td>
 <td>如果 $s2&lt;20, $s1 为 1; 否则为 0 （set on less than）</td>
 </tr>
 </tbody>
