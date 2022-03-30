@@ -1,0 +1,469 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>【3】进程 | 流丹</title><meta name="author" content="LiuDan"><meta name="copyright" content="LiuDan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="进程的概念1 进程：一个正在执行的程序，进程的执行必须按照顺序进行 2 操作系统执行多种程序： 批处理系统 —— 作业 分时系统 —— 用户程序和任务  3 进程的多个部分： 内存：存放程序代码、栈、数据段、堆； 当前活动：当前状态、程序结束器、处理器寄存器，以及上下文信息（即所有寄存器当前的数据值）  4 程序 VS 进程： 程序是存储在磁盘上的被动实体，进程是主动的，当一个可执行文件被加载到">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【3】进程">
+<meta property="og:url" content="https://liudan193.github.io/2022/03/22/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%903%E3%80%91%E8%BF%9B%E7%A8%8B/index.html">
+<meta property="og:site_name" content="流丹">
+<meta property="og:description" content="进程的概念1 进程：一个正在执行的程序，进程的执行必须按照顺序进行 2 操作系统执行多种程序： 批处理系统 —— 作业 分时系统 —— 用户程序和任务  3 进程的多个部分： 内存：存放程序代码、栈、数据段、堆； 当前活动：当前状态、程序结束器、处理器寄存器，以及上下文信息（即所有寄存器当前的数据值）  4 程序 VS 进程： 程序是存储在磁盘上的被动实体，进程是主动的，当一个可执行文件被加载到">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/09/18/fnZ96hYTpmQjLda.jpg">
+<meta property="article:published_time" content="2022-03-22T00:35:56.000Z">
+<meta property="article:modified_time" content="2022-03-29T04:24:14.133Z">
+<meta property="article:author" content="LiuDan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/09/18/fnZ96hYTpmQjLda.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://liudan193.github.io/2022/03/22/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%903%E3%80%91%E8%BF%9B%E7%A8%8B/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【3】进程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-03-29 12:24:14'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/09/18/W8oUmGv79hdVlni.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment-alt"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/daohang/"><i class="fa-fw fa fa-th-large"></i><span> 导航站</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2021/09/18/fnZ96hYTpmQjLda.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">流丹</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment-alt"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/daohang/"><i class="fa-fw fa fa-th-large"></i><span> 导航站</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【3】进程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-22T00:35:56.000Z" title="发表于 2022-03-22 08:35:56">2022-03-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-29T04:24:14.133Z" title="更新于 2022-03-29 12:24:14">2022-03-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【3】进程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h2 id="进程的概念"><a href="#进程的概念" class="headerlink" title="进程的概念"></a>进程的概念</h2><p>1 进程：一个正在执行的程序，进程的执行必须按照顺序进行</p>
+<p>2 操作系统执行多种程序：</p>
+<pre><code>批处理系统 —— 作业
+分时系统 —— 用户程序和任务
+</code></pre>
+<p>3 进程的多个部分：</p>
+<pre><code>内存：存放程序代码、栈、数据段、堆；
+当前活动：当前状态、程序结束器、处理器寄存器，以及上下文信息（即所有寄存器当前的数据值）
+</code></pre>
+<p>4 程序 VS 进程：</p>
+<pre><code>程序是存储在磁盘上的被动实体，进程是主动的，当一个可执行文件被加载到内存时，这个程序就成为进程；
+一个程序可以是多个进程（比如：多个用户执行同一程序，一个程序执行多个任务）
+</code></pre>
+<p>5 进程控制块（PCB）</p>
+<p><strong>进程控制块（PCB）</strong>：包含许多与每个进程相关的信息</p>
+<pre><code>主要包括：
+进程状态 —— 运行、等待、停止等；
+进程ID —— 进程编号
+程序计数器 —— 下个要执行指令的位置
+CPU寄存器 —— 所有与进程相关寄存器的内容
+CPU调度信息 —— 进程优先级、调度队列指针和其他调度参数
+内存管理信息 —— 内存页表、段表等
+记账信息 —— CPU时间、实际使用时间、时间期限、记账数据、作业或进程数量等
+I/O状态信息 —— 分配给进程的IO设备列表、打开的文件列表等
+</code></pre>
+<hr>
+<h3 id="C语言操作-Linux"><a href="#C语言操作-Linux" class="headerlink" title="C语言操作 Linux"></a>C语言操作 Linux</h3><p>创建进程有两种方式，一是由操作系统创建；二是由父进程创建。操作系统创建的进程，它们之间是平等的，一般不存在资源继承关系。而由父进程创建的进程（子进程），它们和父进程存在隶属关系。子进程又可以创建进程，形成一个进程家族。</p>
+<p>系统调用fork是创建一个新进程的唯一方法。进程调用fork函数就创建了一个子进程。</p>
+<p>创建了一个子进程之后，父进程和子进程争夺CPU，抢到CPU者执行，另外一个挂起等待。若要父进程等待子进程执行完毕后再继续执行，可以在fork操作之后调用wait或waitpid。</p>
+<p><strong>fork函数</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">pid_t</span> <span class="title">fork</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>fork() 函数调用后有2个返回值，调用一次，返回两次。<strong>成功调用 fork 函数后，当前进程实际上已经分裂为两个进程</strong>，一个是原来的父进程，另一个是刚刚创建的子进程。</p>
+<p>fork() 函数的2个返回值，一个是父进程调用 fork 函数后的返回值，该返回值是刚刚创建的子进程的 ID；另一个是子进程中 fork 函数的返回值，该返回值是 0。这样可以用返回值来区分父、子进程。</p>
+<p>fork(): 父子进程不共享一段地址空间，修改子进程，父进程的内容并不会受影响。</p>
+<hr>
+<h2 id="进程的调度"><a href="#进程的调度" class="headerlink" title="进程的调度"></a>进程的调度</h2><h3 id="1-调度的基本概念"><a href="#1-调度的基本概念" class="headerlink" title="1. 调度的基本概念"></a>1. 调度的基本概念</h3><p>调度的<strong>目的</strong>：</p>
+<ol>
+<li>最大限度地利用 CPU</li>
+<li>在可接受的响应时间内在进程之间<strong>快速切换 CPU</strong>，尤其是需要和用户交互的进程</li>
+</ol>
+<p><strong>进程调度器</strong>可以从多个可用进程队列中选择一个进程到 CPU 上执行</p>
+<p>维护进程调度的<strong>队列</strong>：</p>
+<ol>
+<li><strong>作业队列</strong> —— 系统中所有进程的集合</li>
+<li><strong>就绪队列</strong> —— 保存驻留在内存中的、就绪的、等待运行的进程</li>
+<li><strong>设备队列</strong> —— 一组等待IO设备的进程列表</li>
+<li>进程在各个队列之间迁移</li>
+</ol>
+<h3 id="2-调度程序"><a href="#2-调度程序" class="headerlink" title="2. 调度程序"></a>2. 调度程序</h3><p><strong>1. 短期调度器</strong> —— 选择接下来要执行的进程，并分配 CPU</p>
+<ol>
+<li>有时候是系统中唯一的调度程序</li>
+<li>短期调度程序被频繁调用 -&gt; 必须快速</li>
+</ol>
+<p><strong>2. 长期调度器</strong> —— 选择那些程序应该进入就绪队列</p>
+<ol>
+<li>长期调度程序的调度并不频繁</li>
+<li>长期调度器控制多道程序粒度（内存中的进程数量）</li>
+<li>分时系统，比如 UNIX 和 Windows 通常不包括长期调度器，多用在批处理中</li>
+</ol>
+<p><strong>3. 中期调度程序</strong></p>
+<p>根据任务类型的不同，进程可以分为：</p>
+<ul>
+<li><strong>IO 密集型进程</strong> —— 执行IO时间比执行计算时间花费更多，有许多短暂的 CPU 突发；</li>
+<li><strong>CPU 密集型进程</strong> —— 花费更多的时间在计算上，少有很长的 CPU 突发</li>
+</ul>
+<p><strong>中期调度程序</strong>：从内存中删除进程，移动到磁盘上，并从中断处继续执行（执行<strong>交换</strong>动作）</p>
+<p><strong>4. 上下文切换</strong></p>
+<p><strong>当 CPU 切换到另一个进程的时候，系统必须保存旧进程的状态，并通过上下文切换为新进程加载其保存的状态</strong></p>
+<p>PCB保存程序的当前情况以及控制进程运行的全部信息（即所有寄存器和程序计数器信息）</p>
+<p>上下文切换的时间是<strong>纯开销</strong>，因为在切换时系统没有做任何有用的工作</p>
+<pre><code>操作系统和 PCB 越复杂，上下文切换时间越长
+上下文切换时间越短越好
+</code></pre>
+<hr>
+<h2 id="进程的操作"><a href="#进程的操作" class="headerlink" title="进程的操作"></a>进程的操作</h2><p><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/1207.html">进程的创建和删除</a></p>
+<h3 id="1-进程的创建"><a href="#1-进程的创建" class="headerlink" title="1. 进程的创建"></a>1. 进程的创建</h3><h4 id="1-父子进程"><a href="#1-父子进程" class="headerlink" title="1. 父子进程"></a>1. 父子进程</h4><p><strong>父进程创建子进程，子进程又创建其他进程，形成进程树</strong></p>
+<p>通过 <strong>进程标识符（pid）</strong> 识别和管理进程</p>
+<p><strong>资源共享选项</strong>（CPU、内存、文件 IO 设备）：</p>
+<ul>
+<li>父进程和子进程共享所有的资源</li>
+<li>子进程获得父进程资源的子集</li>
+<li>父进程和子进程不共享资源</li>
+<li>*执行选项**：</li>
+<li>父进程等待，直到某个或全部子进程执行完</li>
+<li>父进程和子进程并发执行</li>
+</ul>
+<p><strong>父子进程执行的详细解释</strong>：</p>
+<ol>
+<li>父进程等待，直到某个或者全部子进程执行完<ul>
+<li>父进程使用<code>wait()</code>系统调用，等待子进程结束后继续执行</li>
+<li>UNIX shell 通常会等待子程序结束后再执行新任务</li>
+</ul>
+</li>
+<li>父进程和子进程并发执行 <ul>
+<li>父进程继续执行程序</li>
+<li>UNIX shell 以后台进程形式执行过程</li>
+<li>有时候父进程会执行一段时间，处理完自己的任务后，再调用<code>wait()</code>等待子进程处理，如：创建多个子进程，然后再等待的情况</li>
+</ul>
+</li>
+</ol>
+<h4 id="2-进程创建"><a href="#2-进程创建" class="headerlink" title="2. 进程创建"></a>2. 进程创建</h4><p>地址空间：</p>
+<ul>
+<li>子进程是父进程的复制品（它具有与父进程同样的程序和数据）</li>
+<li>子进程加载另一个新程序</li>
+</ul>
+<h3 id="2-进程的终止"><a href="#2-进程的终止" class="headerlink" title="2. 进程的终止"></a>2. 进程的终止</h3><p><strong>原因①. 进程执行完最后一条语句，通过系统调用<code>exit()</code>请求操作系统删除自身</strong></p>
+<ol>
+<li><p>返回状态值到父进程，整数 0 表示正常结束，其他整数表示异常结束</p>
+</li>
+<li><p>进程的资源由操作系统释放</p>
+</li>
+</ol>
+<p><strong>原因②.</strong> 父进程可以使用系统调用<code>kill()</code>终止子进程的执行，这样做的原因：</p>
+<ul>
+<li>子进程适应了超过它所分配的资源</li>
+<li>不再需要分配子进程的任务</li>
+<li>父进程正在退出，而且操作系统不允许无父进程的子进程继续执行</li>
+</ul>
+<p><strong>原因③.</strong> 除了以上情况，有时候为了回复某些未处理的中断也会终止响应进程</p>
+<p>某些操作系统不允许子进程在父进程已经终止的情况下存在。如果一个进程终止，那么他的所有子进程也必须终止：</p>
+<ul>
+<li><strong>级联式终止</strong>：所有的子进程、子进程的子进程等都被终止</li>
+<li><strong>终止由操作系统发起</strong></li>
+</ul>
+<p>父进程可以通过系统调用 <code>wait()</code> 等待子进程的终止，并返回状态信息和终止进程的 pid</p>
+<p>当子进程已经终止，但是其父进程没有调用 <code>wait()</code> ，这样的子进程称为<strong>僵尸进程</strong></p>
+<ul>
+<li>当进程终止时，他的资源将被系统回收，但是进程表（process table）中仍然保留了子进程的退出状态信息，直到父进程使用系统调用 <code>wait()</code> 返回后清除</li>
+</ul>
+<p>如果父进程没有调用 <code>wait()</code> 就终止，子进程就会变成<strong>孤儿进程</strong></p>
+<ul>
+<li>孤儿进程由systemXX进程接受，接着运行</li>
+</ul>
+<hr>
+<h2 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h2><h3 id="1-进程协作概念"><a href="#1-进程协作概念" class="headerlink" title="1. 进程协作概念"></a>1. 进程协作概念</h3><p>操作系统内并发的进程可以是独立的，也可以是协作的</p>
+<p>协作的进程能影响其他进程或受其他进程所影响，包括共享数据</p>
+<p>进程协作的目的：</p>
+<ul>
+<li>信息共享：并行进程共享数据</li>
+<li>计算加速：将复杂的任务划分为子任务并行执行</li>
+<li>模块化：将复杂系统拆分为独立协作的不同部分，提高效率，减小故障影响，便于维护</li>
+<li>方便</li>
+</ul>
+<h3 id="2-通信模型"><a href="#2-通信模型" class="headerlink" title="2. 通信模型"></a>2. 通信模型</h3><p>协作进程需要一种进程间通信（IPC）</p>
+<p>两种基本模型：</p>
+<ul>
+<li>共享内存<ul>
+<li>速度快，适合在同一计算机上大量数据的传输</li>
+<li>配置比较复杂，不适合跨计算机</li>
+</ul>
+</li>
+<li>消息传递<ul>
+<li>速度比共享内存慢</li>
+<li>适合少量数据传输，适合跨计算机传输</li>
+</ul>
+</li>
+</ul>
+<p>共享内存：</p>
+<ul>
+<li>通常来说，操作系统尽力阻止跨进程的内存访问</li>
+<li>共享内存机制允许一个进程在内存中创建一块供其他进程访问的区域，实现进程间消息的传递；当其他进程访问这些消息时，首先需要将共享内存区域的地址映射到自己的地址空间中</li>
+<li>通过在共享区域中的读写操作实现信息的传递</li>
+<li>主要难点是不同进程间读写时的同步问题</li>
+</ul>
+<h3 id="3-生产者-消费者问题"><a href="#3-生产者-消费者问题" class="headerlink" title="3. 生产者-消费者问题"></a>3. 生产者-消费者问题</h3><p>进程通信的范例：<strong>生产-消费者模型</strong></p>
+<ul>
+<li>生产者进程<strong>生成(produce)信息</strong>， 以供消费者进程消<strong>费(consume)信息</strong></li>
+</ul>
+<p><strong>模型类型</strong></p>
+<ul>
+<li><strong>无界缓冲区</strong>对缓冲区的大小没有实际限制</li>
+<li><strong>有界缓冲区</strong>假设有一个固定大小的缓冲区；生产者只有当缓冲区有<strong>空闲区域</strong>时才能生成信息；消费者只有当缓冲区中<strong>数据准备好</strong>时才能消费信息</li>
+</ul>
+<p>有界缓冲区的生产者进程：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">item next_produced; </span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123; </span><br><span class="line">	<span class="comment">/* produce an item in next produced */</span> </span><br><span class="line">	<span class="keyword">while</span> (((in + <span class="number">1</span>) % BUFFER_SIZE) == out) </span><br><span class="line">		; <span class="comment">/* do nothing */</span> </span><br><span class="line">	buffer[in] = next_produced; </span><br><span class="line">	in = (in + <span class="number">1</span>) % BUFFER_SIZE; </span><br><span class="line">&#125; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>有界缓冲区的消费者进程：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">item next_consumed; </span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;	</span><br><span class="line">    <span class="keyword">while</span> (in == out)</span><br><span class="line">        ; <span class="comment">/* do nothing */</span>	</span><br><span class="line">    next_consumed = buffer[out]; </span><br><span class="line">	out = (out + <span class="number">1</span>) % BUFFER_SIZE;</span><br><span class="line">	<span class="comment">/* consume the item in next consumed */</span> </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<h3 id="4-共享内存"><a href="#4-共享内存" class="headerlink" title="4. 共享内存"></a>4. 共享内存</h3><ul>
+<li>需要通信的进程之间建立共享内存区域</li>
+<li>通信受控于用户进程，而非操作系统</li>
+<li>主要问题是提供一种机制，允许用户进程在访问共享内存时同步它们的操作</li>
+</ul>
+<h3 id="5-消息传递"><a href="#5-消息传递" class="headerlink" title="5. 消息传递"></a>5. 消息传递</h3><p>如果进程P和Q希望进行通信，它们需要：</p>
+<ul>
+<li>在它们之间建立 <strong>通信链路</strong></li>
+<li>通过 <strong>发送/接收（send/receive）</strong> 交换信息</li>
+</ul>
+<h4 id="5-1-如何建立链路"><a href="#5-1-如何建立链路" class="headerlink" title="5.1 如何建立链路"></a>5.1 如何建立链路</h4><ul>
+<li>物理上：<ul>
+<li>共享内存</li>
+<li>硬件总线</li>
+<li>网络</li>
+</ul>
+</li>
+<li>逻辑：<ul>
+<li>直接或间接的通信</li>
+<li>同步或异步的通信</li>
+<li>自动或显式的缓冲</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-2-直接通信和间接通信的解释"><a href="#5-2-直接通信和间接通信的解释" class="headerlink" title="5.2 直接通信和间接通信的解释"></a>5.2 直接通信和间接通信的解释</h4><h5 id="直接通信"><a href="#直接通信" class="headerlink" title="直接通信"></a>直接通信</h5><ul>
+<li><strong>需要通信的每个进程必须明确指定通信的接受者或发送者</strong><ul>
+<li><code>send(P, message)</code> - 向进程P发送消息</li>
+<li><code>receive(Q, message)</code> - 从进程Q接收消息</li>
+</ul>
+</li>
+<li><strong>通信链路具有以下属性</strong>：<ul>
+<li>需要通信的每对进程之间，自动建立链路</li>
+<li>每个链路只与两个进程相关</li>
+<li>每对链路之间只有一个链路</li>
+<li>链路可能是单向的，但通常是双向的</li>
+</ul>
+</li>
+</ul>
+<h5 id="间接通信"><a href="#间接通信" class="headerlink" title="间接通信"></a>间接通信</h5><ul>
+<li><strong>消息从邮箱（也称为端口）发送和接收</strong><ul>
+<li>每个邮箱都有一个唯一的 id</li>
+<li>进程只有在共享邮箱的时候才能通信</li>
+</ul>
+</li>
+<li><strong>通信链路的特点</strong>：<ul>
+<li>只有在两个进程共享一个邮箱时，才能建立通信链路</li>
+<li>一个链路可以与多个进程相关联</li>
+<li>每对进程可以共享多个通信链路，每个链路对应一个邮箱</li>
+<li>链路可以是单向或双向的</li>
+</ul>
+</li>
+<li><strong>操作</strong><ul>
+<li>创建新的邮箱</li>
+<li>通过邮箱发送和接收消息</li>
+<li>删除邮箱</li>
+</ul>
+</li>
+<li><strong>原语定义如下</strong>：<ul>
+<li><code>send(A, message)</code> - 向邮箱 A 发送消息</li>
+<li><code>receive(A, message)</code> - 从邮箱 A 接收消息</li>
+</ul>
+</li>
+<li><strong>解决一些问题</strong><ul>
+<li>比如说，进程 P1、P2 和 P3 共享邮箱 A，P1 发送消息 P2、P3 接收，那么谁将收到消息？</li>
+<li>解决：<ul>
+<li>允许一个链路最多和两个进程关联</li>
+<li>允许一次最多一个进程执行 <code>receive()</code> 操作</li>
+<li>允许系统随意选择一个进程接收消息，并通知发送方接收者是谁</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-3-同步（Synchronization）"><a href="#5-3-同步（Synchronization）" class="headerlink" title="5.3 同步（Synchronization）"></a>5.3 同步（Synchronization）</h4><blockquote>
+<p>消息传递可以是阻塞（blocking）的，也可以是非阻塞（non-blocking）的</p>
+</blockquote>
+<p><strong>阻塞</strong>被认为是<strong>同步</strong>的：</p>
+<ul>
+<li><strong>阻塞发送</strong> – 发送进程阻塞，直到消息由接收进程或邮箱所接收</li>
+<li><strong>阻塞发送</strong> – 接收进程阻塞，直到有消息可用</li>
+</ul>
+<p><strong>非阻塞</strong>被认为是<strong>异步</strong>的：</p>
+<ul>
+<li><strong>非阻塞发送</strong> – 发送进程发送消息，并且恢复操作</li>
+<li><strong>非阻塞接收</strong> – 接收进程收到一个有效消息或空消息</li>
+</ul>
+<h4 id="5-4-缓存（buffering）"><a href="#5-4-缓存（buffering）" class="headerlink" title="5.4 缓存（buffering）"></a>5.4 缓存（buffering）</h4><blockquote>
+<p>通信进程交换的消息总是驻留在缓冲队列中</p>
+</blockquote>
+<p>缓冲队列三种类型：</p>
+<ol>
+<li>   <strong>零容量</strong>——没有消息在链路上排队。发送者应阻塞， 直到接收者接收到消息</li>
+<li>   <strong>有限容量</strong>——有限长度的 n 条消息，如果链路已满，发送方必须等待</li>
+<li>   <strong>无限容量</strong>——无限长度，发送方从不等待</li>
+</ol>
+<hr>
+<h2 id="IPC-系统示例-–-POSIX"><a href="#IPC-系统示例-–-POSIX" class="headerlink" title="IPC 系统示例 – POSIX"></a>IPC 系统示例 – POSIX</h2><p><strong>POSIX 共享内存</strong></p>
+<ol>
+<li><p>进程首先创建共享内存对象（也用于打开现有对象以便于共享）：<br><code>shm_fd = shm_open(name, O CREAT | O RDWR, 0666);</code></p>
+</li>
+<li><p>设置对象的大小：<br><code>ftruncate(shm fd, 4096); </code></p>
+</li>
+<li><p>现在对象可以写入共享内存：<br><code>sprintf(shared memory, &quot;Writing to shared memory&quot;);</code></p>
+</li>
+</ol>
+<hr>
+<h2 id="客户机—服务器通信（主要是管道）"><a href="#客户机—服务器通信（主要是管道）" class="headerlink" title="客户机—服务器通信（主要是管道）"></a>客户机—服务器通信（主要是管道）</h2><blockquote>
+<p>管道允许两个进程进行通信</p>
+</blockquote>
+<pre><code>问题：
+  管道允许单向通信还是双向通信？
+  如果允许双向通信， 它是半双工还是全双工？
+  通信进程之间是否应有一定的关系（如父子关系）？
+  管道通信能否通过网络， 还是只能在同一台机器上进行？
+</code></pre>
+<blockquote>
+<p>普通管道—只能由创建进程访问。通常，父进程创建一个管道，并使用它与父进程创建的其它子进程通信<br>命名管道—可以在没有父子关系的情况下访问</p>
+</blockquote>
+<h3 id="1-普通管道"><a href="#1-普通管道" class="headerlink" title="1. 普通管道"></a>1. 普通管道</h3><ul>
+<li>普通管道允许两个进程以标准的生产者—消费者方式进行通信</li>
+<li>生产者写到一端（写入端）；消费者从另一端（读取端）读取</li>
+<li>因此普通管道是单向的；实现双向通信需要创建2个管道</li>
+<li>需要通信进程之间的父子关系</li>
+</ul>
+<h3 id="2-命名管道"><a href="#2-命名管道" class="headerlink" title="2. 命名管道"></a>2. 命名管道</h3><ul>
+<li>命名管道比普通管道更强大</li>
+<li>通信是双向的</li>
+<li>通信进程之间不需要父子关系</li>
+<li>多个进程可以使用命名管道进行通信</li>
+<li>UNIX 和 Windows 系统支持命名管道</li>
+</ul>
+<p><strong>UNIX系统中</strong>，命名管道(FIFOs)在文件系统中以文件形式存储在系统中</p>
+<pre><code>使用`mkfifo()`调用进行创建，使用`read()`, `write()`, `open()` 调用进行操作
+UNIX的命名管道时双向的，但也是半双工的，仍需要建立2个管道来进行双向通信
+命名管道只能在同一台机器上使用，跨机器通信需要使用Socket套接字
+</code></pre>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">LiuDan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://liudan193.github.io/2022/03/22/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%903%E3%80%91%E8%BF%9B%E7%A8%8B/">https://liudan193.github.io/2022/03/22/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%903%E3%80%91%E8%BF%9B%E7%A8%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="undefined" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://liudan193.github.io" target="_blank">流丹</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/09/18/fnZ96hYTpmQjLda.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/03/29/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%904%E3%80%91%E7%BA%BF%E7%A8%8B/"><img class="prev-cover" src="https://i.loli.net/2021/09/18/fnZ96hYTpmQjLda.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【4】线程</div></div></a></div><div class="next-post pull-right"><a href="/2022/03/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%902%E3%80%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"><img class="next-cover" src="https://i.loli.net/2021/09/18/fnZ96hYTpmQjLda.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【2】操作系统结构</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/09/18/W8oUmGv79hdVlni.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">LiuDan</div><div class="author-info__description">个人博客</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/liudan193" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/1935084929@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/1935084929" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">进程的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E6%93%8D%E4%BD%9C-Linux"><span class="toc-number">1.1.</span> <span class="toc-text">C语言操作 Linux</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%B0%83%E5%BA%A6"><span class="toc-number">2.</span> <span class="toc-text">进程的调度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%B0%83%E5%BA%A6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text">1. 调度的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%B0%83%E5%BA%A6%E7%A8%8B%E5%BA%8F"><span class="toc-number">2.2.</span> <span class="toc-text">2. 调度程序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">进程的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">3.1.</span> <span class="toc-text">1. 进程的创建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%88%B6%E5%AD%90%E8%BF%9B%E7%A8%8B"><span class="toc-number">3.1.1.</span> <span class="toc-text">1. 父子进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%BF%9B%E7%A8%8B%E5%88%9B%E5%BB%BA"><span class="toc-number">3.1.2.</span> <span class="toc-text">2. 进程创建</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BB%88%E6%AD%A2"><span class="toc-number">3.2.</span> <span class="toc-text">2. 进程的终止</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1"><span class="toc-number">4.</span> <span class="toc-text">进程间通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%BF%9B%E7%A8%8B%E5%8D%8F%E4%BD%9C%E6%A6%82%E5%BF%B5"><span class="toc-number">4.1.</span> <span class="toc-text">1. 进程协作概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.2.</span> <span class="toc-text">2. 通信模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98"><span class="toc-number">4.3.</span> <span class="toc-text">3. 生产者-消费者问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98"><span class="toc-number">4.4.</span> <span class="toc-text">4. 共享内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92"><span class="toc-number">4.5.</span> <span class="toc-text">5. 消息传递</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E9%93%BE%E8%B7%AF"><span class="toc-number">4.5.1.</span> <span class="toc-text">5.1 如何建立链路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-%E7%9B%B4%E6%8E%A5%E9%80%9A%E4%BF%A1%E5%92%8C%E9%97%B4%E6%8E%A5%E9%80%9A%E4%BF%A1%E7%9A%84%E8%A7%A3%E9%87%8A"><span class="toc-number">4.5.2.</span> <span class="toc-text">5.2 直接通信和间接通信的解释</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E9%80%9A%E4%BF%A1"><span class="toc-number">4.5.2.1.</span> <span class="toc-text">直接通信</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%97%B4%E6%8E%A5%E9%80%9A%E4%BF%A1"><span class="toc-number">4.5.2.2.</span> <span class="toc-text">间接通信</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-%E5%90%8C%E6%AD%A5%EF%BC%88Synchronization%EF%BC%89"><span class="toc-number">4.5.3.</span> <span class="toc-text">5.3 同步（Synchronization）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-%E7%BC%93%E5%AD%98%EF%BC%88buffering%EF%BC%89"><span class="toc-number">4.5.4.</span> <span class="toc-text">5.4 缓存（buffering）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IPC-%E7%B3%BB%E7%BB%9F%E7%A4%BA%E4%BE%8B-%E2%80%93-POSIX"><span class="toc-number">5.</span> <span class="toc-text">IPC 系统示例 – POSIX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E6%9C%BA%E2%80%94%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%80%9A%E4%BF%A1%EF%BC%88%E4%B8%BB%E8%A6%81%E6%98%AF%E7%AE%A1%E9%81%93%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">客户机—服务器通信（主要是管道）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%99%AE%E9%80%9A%E7%AE%A1%E9%81%93"><span class="toc-number">6.1.</span> <span class="toc-text">1. 普通管道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%91%BD%E5%90%8D%E7%AE%A1%E9%81%93"><span class="toc-number">6.2.</span> <span class="toc-text">2. 命名管道</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/03/29/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%904%E3%80%91%E7%BA%BF%E7%A8%8B/" title="【4】线程"><img src="https://i.loli.net/2021/09/18/fnZ96hYTpmQjLda.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【4】线程"/></a><div class="content"><a class="title" href="/2022/03/29/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%904%E3%80%91%E7%BA%BF%E7%A8%8B/" title="【4】线程">【4】线程</a><time datetime="2022-03-29T04:25:02.000Z" title="发表于 2022-03-29 12:25:02">2022-03-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/22/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%903%E3%80%91%E8%BF%9B%E7%A8%8B/" title="【3】进程"><img src="https://i.loli.net/2021/09/18/fnZ96hYTpmQjLda.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【3】进程"/></a><div class="content"><a class="title" href="/2022/03/22/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%903%E3%80%91%E8%BF%9B%E7%A8%8B/" title="【3】进程">【3】进程</a><time datetime="2022-03-22T00:35:56.000Z" title="发表于 2022-03-22 08:35:56">2022-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%902%E3%80%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/" title="【2】操作系统结构"><img src="https://i.loli.net/2021/09/18/fnZ96hYTpmQjLda.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【2】操作系统结构"/></a><div class="content"><a class="title" href="/2022/03/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%902%E3%80%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/" title="【2】操作系统结构">【2】操作系统结构</a><time datetime="2022-03-21T12:03:15.000Z" title="发表于 2022-03-21 20:03:15">2022-03-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%901%E3%80%91%E5%AF%BC%E8%AE%BA/" title="【1】导论"><img src="https://i.loli.net/2021/09/18/fnZ96hYTpmQjLda.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【1】导论"/></a><div class="content"><a class="title" href="/2022/03/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E3%80%901%E3%80%91%E5%AF%BC%E8%AE%BA/" title="【1】导论">【1】导论</a><time datetime="2022-03-21T10:05:12.000Z" title="发表于 2022-03-21 18:05:12">2022-03-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/11/Python%E5%AD%A6%E4%B9%A0/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" title="无题"><img src="https://i.loli.net/2021/09/18/fnZ96hYTpmQjLda.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/02/11/Python%E5%AD%A6%E4%B9%A0/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" title="无题">无题</a><time datetime="2022-02-11T02:35:41.344Z" title="发表于 2022-02-11 10:35:41">2022-02-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By LiuDan</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
