@@ -1,15 +1,15 @@
-/* Logo 字体 */
+/* Logo &#x5B57;&#x4F53; */
 @font-face {
-  font-family: "iconfont logo";
-  src: url('https://at.alicdn.com/t/font_985780_km7mi63cihi.eot?t=1545807318834');
-  src: url('https://at.alicdn.com/t/font_985780_km7mi63cihi.eot?t=1545807318834#iefix') format('embedded-opentype'),
-    url('https://at.alicdn.com/t/font_985780_km7mi63cihi.woff?t=1545807318834') format('woff'),
-    url('https://at.alicdn.com/t/font_985780_km7mi63cihi.ttf?t=1545807318834') format('truetype'),
-    url('https://at.alicdn.com/t/font_985780_km7mi63cihi.svg?t=1545807318834#iconfont') format('svg');
+  font-family: &quot;iconfont logo&quot;;
+  src: url(&apos;https://at.alicdn.com/t/font_985780_km7mi63cihi.eot?t=1545807318834&apos;);
+  src: url(&apos;https://at.alicdn.com/t/font_985780_km7mi63cihi.eot?t=1545807318834#iefix&apos;) format(&apos;embedded-opentype&apos;),
+    url(&apos;https://at.alicdn.com/t/font_985780_km7mi63cihi.woff?t=1545807318834&apos;) format(&apos;woff&apos;),
+    url(&apos;https://at.alicdn.com/t/font_985780_km7mi63cihi.ttf?t=1545807318834&apos;) format(&apos;truetype&apos;),
+    url(&apos;https://at.alicdn.com/t/font_985780_km7mi63cihi.svg?t=1545807318834#iconfont&apos;) format(&apos;svg&apos;);
 }
 
 .logo {
-  font-family: "iconfont logo";
+  font-family: &quot;iconfont logo&quot;;
   font-size: 160px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
@@ -58,7 +58,7 @@
   display: none;
 }
 
-/* 页面布局 */
+/* &#x9875;&#x9762;&#x5E03;&#x5C40; */
 .main {
   padding: 30px 100px;
   width: 960px;
@@ -129,14 +129,14 @@
 }
 
 .icon_lists .svg-icon {
-  /* 通过设置 font-size 来改变图标大小 */
+  /* &#x901A;&#x8FC7;&#x8BBE;&#x7F6E; font-size &#x6765;&#x6539;&#x53D8;&#x56FE;&#x6807;&#x5927;&#x5C0F; */
   width: 1em;
-  /* 图标和文字相邻时，垂直对齐 */
+  /* &#x56FE;&#x6807;&#x548C;&#x6587;&#x5B57;&#x76F8;&#x90BB;&#x65F6;&#xFF0C;&#x5782;&#x76F4;&#x5BF9;&#x9F50; */
   vertical-align: -0.15em;
-  /* 通过设置 color 来改变 SVG 的颜色/fill */
+  /* &#x901A;&#x8FC7;&#x8BBE;&#x7F6E; color &#x6765;&#x6539;&#x53D8; SVG &#x7684;&#x989C;&#x8272;/fill */
   fill: currentColor;
-  /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
-      normalize.css 中也包含这行 */
+  /* path &#x548C; stroke &#x6EA2;&#x51FA; viewBox &#x90E8;&#x5206;&#x5728; IE &#x4E0B;&#x4F1A;&#x663E;&#x793A;
+      normalize.css &#x4E2D;&#x4E5F;&#x5305;&#x542B;&#x8FD9;&#x884C; */
   overflow: hidden;
 }
 
@@ -145,7 +145,7 @@
   color: #666;
 }
 
-/* markdown 样式 */
+/* markdown &#x6837;&#x5F0F; */
 .markdown {
   color: #666;
   font-size: 14px;
@@ -215,35 +215,35 @@
   margin: 1em 0;
 }
 
-.markdown>p,
-.markdown>blockquote,
-.markdown>.highlight,
-.markdown>ol,
-.markdown>ul {
+.markdown&gt;p,
+.markdown&gt;blockquote,
+.markdown&gt;.highlight,
+.markdown&gt;ol,
+.markdown&gt;ul {
   width: 80%;
 }
 
-.markdown ul>li {
+.markdown ul&gt;li {
   list-style: circle;
 }
 
-.markdown>ul li,
-.markdown blockquote ul>li {
+.markdown&gt;ul li,
+.markdown blockquote ul&gt;li {
   margin-left: 20px;
   padding-left: 4px;
 }
 
-.markdown>ul li p,
-.markdown>ol li p {
+.markdown&gt;ul li p,
+.markdown&gt;ol li p {
   margin: 0.6em 0;
 }
 
-.markdown ol>li {
+.markdown ol&gt;li {
   list-style: decimal;
 }
 
-.markdown>ol li,
-.markdown blockquote ol>li {
+.markdown&gt;ol li,
+.markdown blockquote ol&gt;li {
   margin-left: 20px;
   padding-left: 4px;
 }
@@ -260,7 +260,7 @@
   font-weight: 600;
 }
 
-.markdown>table {
+.markdown&gt;table {
   border-collapse: collapse;
   border-spacing: 0px;
   empty-cells: show;
@@ -269,20 +269,20 @@
   margin-bottom: 24px;
 }
 
-.markdown>table th {
+.markdown&gt;table th {
   white-space: nowrap;
   color: #333;
   font-weight: 600;
 }
 
-.markdown>table th,
-.markdown>table td {
+.markdown&gt;table th,
+.markdown&gt;table td {
   border: 1px solid #e9e9e9;
   padding: 8px 16px;
   text-align: left;
 }
 
-.markdown>table th {
+.markdown&gt;table th {
   background: #F7F7F7;
 }
 
@@ -318,8 +318,8 @@
   display: inline-block;
 }
 
-.markdown>br,
-.markdown>p>br {
+.markdown&gt;br,
+.markdown&gt;p&gt;br {
   clear: both;
 }
 
@@ -391,20 +391,20 @@
   text-decoration: underline;
 }
 
-/* 代码高亮 */
+/* &#x4EE3;&#x7801;&#x9AD8;&#x4EAE; */
 /* PrismJS 1.15.0
-https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+https://prismjs.com/download.html#themes=prism&amp;languages=markup+css+clike+javascript */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
  * @author Lea Verou
  */
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*=&quot;language-&quot;],
+pre[class*=&quot;language-&quot;] {
   color: black;
   background: none;
   text-shadow: 0 1px white;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: Consolas, Monaco, &apos;Andale Mono&apos;, &apos;Ubuntu Mono&apos;, monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -422,44 +422,44 @@ pre[class*="language-"] {
   hyphens: none;
 }
 
-pre[class*="language-"]::-moz-selection,
-pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection,
-code[class*="language-"] ::-moz-selection {
+pre[class*=&quot;language-&quot;]::-moz-selection,
+pre[class*=&quot;language-&quot;] ::-moz-selection,
+code[class*=&quot;language-&quot;]::-moz-selection,
+code[class*=&quot;language-&quot;] ::-moz-selection {
   text-shadow: none;
   background: #b3d4fc;
 }
 
-pre[class*="language-"]::selection,
-pre[class*="language-"] ::selection,
-code[class*="language-"]::selection,
-code[class*="language-"] ::selection {
+pre[class*=&quot;language-&quot;]::selection,
+pre[class*=&quot;language-&quot;] ::selection,
+code[class*=&quot;language-&quot;]::selection,
+code[class*=&quot;language-&quot;] ::selection {
   text-shadow: none;
   background: #b3d4fc;
 }
 
 @media print {
 
-  code[class*="language-"],
-  pre[class*="language-"] {
+  code[class*=&quot;language-&quot;],
+  pre[class*=&quot;language-&quot;] {
     text-shadow: none;
   }
 }
 
 /* Code blocks */
-pre[class*="language-"] {
+pre[class*=&quot;language-&quot;] {
   padding: 1em;
   margin: .5em 0;
   overflow: auto;
 }
 
-:not(pre)>code[class*="language-"],
-pre[class*="language-"] {
+:not(pre)&gt;code[class*=&quot;language-&quot;],
+pre[class*=&quot;language-&quot;] {
   background: #f5f2f0;
 }
 
 /* Inline code */
-:not(pre)>code[class*="language-"] {
+:not(pre)&gt;code[class*=&quot;language-&quot;] {
   padding: .1em;
   border-radius: .3em;
   white-space: normal;

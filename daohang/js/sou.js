@@ -1,47 +1,47 @@
-//关键词sug
+//&#x5173;&#x952E;&#x8BCD;sug
 $(function() {
-    //当键盘键被松开时发送Ajax获取数据
-    $('#search-text').keyup(function() {
+    //&#x5F53;&#x952E;&#x76D8;&#x952E;&#x88AB;&#x677E;&#x5F00;&#x65F6;&#x53D1;&#x9001;Ajax&#x83B7;&#x53D6;&#x6570;&#x636E;
+    $(&apos;#search-text&apos;).keyup(function() {
         var keywords = $(this).val();
-        if (keywords == '') { $('#word').hide(); return };
+        if (keywords == &apos;&apos;) { $(&apos;#word&apos;).hide(); return };
         $.ajax({
-            url: 'https://suggestion.baidu.com/su?wd=' + keywords,
-            dataType: 'jsonp',
-            jsonp: 'cb', //回调函数的参数名(键值)key
-            // jsonpCallback: 'fun', //回调函数名(值) value
+            url: &apos;https://suggestion.baidu.com/su?wd=&apos; + keywords,
+            dataType: &apos;jsonp&apos;,
+            jsonp: &apos;cb&apos;, //&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x540D;(&#x952E;&#x503C;)key
+            // jsonpCallback: &apos;fun&apos;, //&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x540D;(&#x503C;) value
             beforeSend: function() {
-                // $('#word').append('<li>正在加载。。。</li>');
+                // $(&apos;#word&apos;).append(&apos;<li>&#x6B63;&#x5728;&#x52A0;&#x8F7D;&#x3002;&#x3002;&#x3002;</li>&apos;);
             },
             success: function(data) {
-                $('#word').empty().show();
-                if (data.s == '') {
-                    //$('#word').append('<div class="error">Not find  "' + keywords + '"</div>');
-                    $('#word').empty();
-                    $('#word').hide();
+                $(&apos;#word&apos;).empty().show();
+                if (data.s == &apos;&apos;) {
+                    //$(&apos;#word&apos;).append(&apos;<div class="error">Not find  &quot;&apos; + keywords + &apos;&quot;</div>&apos;);
+                    $(&apos;#word&apos;).empty();
+                    $(&apos;#word&apos;).hide();
                 }
                 $.each(data.s, function() {
-                    $('#word').append('<li>' + this + '</li>');
+                    $(&apos;#word&apos;).append(&apos;<li>&apos; + this + &apos;</li>&apos;);
                 })
             },
             error: function() {
-                $('#word').empty().show();
-                //$('#word').append('<div class="click_work">Fail "' + keywords + '"</div>');
-                $('#word').hide();
+                $(&apos;#word&apos;).empty().show();
+                //$(&apos;#word&apos;).append(&apos;<div class="click_work">Fail &quot;&apos; + keywords + &apos;&quot;</div>&apos;);
+                $(&apos;#word&apos;).hide();
             }
         })
     })
-    //点击搜索数据复制给搜索框
-    $(document).on('click', '#word li', function() {
+    //&#x70B9;&#x51FB;&#x641C;&#x7D22;&#x6570;&#x636E;&#x590D;&#x5236;&#x7ED9;&#x641C;&#x7D22;&#x6846;
+    $(document).on(&apos;click&apos;, &apos;#word li&apos;, function() {
         var word = $(this).text();
-        $('#search-text').val(word);
-        $('#word').empty();
-        $('#word').hide();
-        //$("form").submit();
-         $('.submit').trigger('click');//触发搜索事件
+        $(&apos;#search-text&apos;).val(word);
+        $(&apos;#word&apos;).empty();
+        $(&apos;#word&apos;).hide();
+        //$(&quot;form&quot;).submit();
+         $(&apos;.submit&apos;).trigger(&apos;click&apos;);//&#x89E6;&#x53D1;&#x641C;&#x7D22;&#x4E8B;&#x4EF6;
     })
-    $(document).on('click', '.container,.banner-video,nav', function() {
-        $('#word').empty();
-        $('#word').hide();
+    $(document).on(&apos;click&apos;, &apos;.container,.banner-video,nav&apos;, function() {
+        $(&apos;#word&apos;).empty();
+        $(&apos;#word&apos;).hide();
     })
 
 })
