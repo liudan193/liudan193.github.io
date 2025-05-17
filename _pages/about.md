@@ -26,7 +26,7 @@ I'm Zongqi Wang. I am currently a first-year master's student supervised by [Pro
 
 * MorphMark: Flexible Adaptive Watermarking for Large Language Models
   * **Zongqi Wang**, Tianle Gu, Baoyuan Wu, Yujiu Yang
-  * ACL 2025 Main [[pdf](todo)][[code](https://github.com/liudan193/MarkLLM)]
+  * ACL 2025 Main [[pdf](https://github.com/liudan193/liudan193.github.io/releases/download/paper-v1.0.0/MorphMark_ACL_2025.pdf)][[code](https://github.com/liudan193/MarkLLM)]
 
 * Robust and Minimally Invasive Watermarking for EaaS
   * **Zongqi Wang**, Baoyuan Wu, Jingyuan Deng, Yujiu Yang
