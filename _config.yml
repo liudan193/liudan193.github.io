@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Zongqi Wang"
-description              : "zq-wang24@mails.tsinghua.edu.cn"
+description              : "Contact: zq-wang24@mails.tsinghua.edu.cn"
 repository               : "liudan193/liudan193.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -28,7 +28,7 @@ author:
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=dbCdFjoAAAAJ&hl=zh-CN"
-  email            : "Contact: zq-wang24@mails.tsinghua.edu.cn"
+  email            : "zq-wang24@mails.tsinghua.edu.cn"
   researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
