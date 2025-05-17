@@ -16,7 +16,7 @@ I'm Zongqi Wang. I am currently a first-year master's student supervised by [Pro
 
 # 🔥 News
 - *2025.05*: 🎉🎉 We are excited to release our new paper: "From Rankings to Insights: Evaluation Should Shift Focus from Leaderboard to Feedback".
-- *2025.05*: 🎉🎉 Two papers on LLM watermark are accepted to **ACL 2025**. 
+- *2025.05*: 🎉🎉 Our **two papers** on LLM watermark are accepted to **ACL 2025**. 
 
 # 📝 Publications 
 
