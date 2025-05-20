@@ -10,13 +10,13 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-# Biography
+# About me
 I'm Zongqi Wang. I am currently a first-year master's student supervised by [Prof.Yang](https://www.sigs.tsinghua.edu.cn/yyj/list.htm) at Tsinghua University. I received my bachelor's degree from Xidian University. My previous research focused on LLM Watermark, Adversarial Attack, Fairness and AI safety. Now, my research interests are primarily in LLM Alignment, Reward Model, Evaluation.
 
 
 # 🔥 News
 - *2025.05*: 🎉🎉 We are excited to release our new paper: "From Rankings to Insights: Evaluation Should Shift Focus from Leaderboard to Feedback".
-- *2025.05*: 🎉🎉 Our **two papers** on LLM watermark are accepted to **ACL 2025**. 
+- *2025.05*: 🎉🎉 Our **two papers** about LLM watermark are accepted to **ACL 2025**. 
 
 # 📝 Publications 
 
@@ -26,7 +26,7 @@ I'm Zongqi Wang. I am currently a first-year master's student supervised by [Pro
 
 * MorphMark: Flexible Adaptive Watermarking for Large Language Models
   * **Zongqi Wang**, Tianle Gu, Baoyuan Wu, Yujiu Yang
-  * ACL 2025 Main [[pdf](https://github.com/liudan193/liudan193.github.io/releases/download/paper-v1.0.0/MorphMark_ACL_2025.pdf)][[code](https://github.com/liudan193/MarkLLM)]
+  * ACL 2025 Main [[pdf](https://arxiv.org/abs/2505.11541)][[code](https://github.com/liudan193/MarkLLM)]
 
 * Robust and Minimally Invasive Watermarking for EaaS
   * **Zongqi Wang**, Baoyuan Wu, Jingyuan Deng, Yujiu Yang
