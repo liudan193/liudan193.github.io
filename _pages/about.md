@@ -11,7 +11,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # About me
-I'm Zongqi Wang. I am currently a first-year master's student supervised by [Prof.Yang](https://www.sigs.tsinghua.edu.cn/yyj/list.htm) at Tsinghua University. I received my bachelor's degree from Xidian University. My previous research focused on LLM Watermark, Adversarial Attack, Fairness and AI safety. Now, my research interests are primarily in LLM Alignment, Generative Reward Model, LLM-as-a-Judge and LLM Evaluation.
+I'm Zongqi Wang. I am currently a first-year master's student supervised by [Prof.Yang](https://www.sigs.tsinghua.edu.cn/yyj/list.htm) at Tsinghua University. I received my bachelor's degree from Xidian University. My previous research focused on LLM Watermark, Adversarial Attack, Fairness and AI safety. Now, my research interests are primarily in Generative Reward Model, Open-ended Tasks (like Writing and Role-Play), LLM-as-a-Judge and LLM Evaluation.
 
 
 # 🔥 News
@@ -43,6 +43,7 @@ I'm Zongqi Wang. I am currently a first-year master's student supervised by [Pro
 
 # 💻 Internships
 - *2024.12 - 2025.05*, Baidu ERNIE Bot (文心一言).
+- *2025.06 - present*, Alibaba Tongyi Lab (通义).
 
 # 📖 Educations
 - *2024.09 - 2027.06*, Master's degree (Expected), Tsinghua University
