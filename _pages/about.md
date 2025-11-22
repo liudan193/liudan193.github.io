@@ -11,16 +11,16 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # About me
-I'm Zongqi Wang. I am currently a first-year master's student supervised by [Prof.Yang](https://www.sigs.tsinghua.edu.cn/yyj/list.htm) at Tsinghua University. I received my bachelor's degree from Xidian University. My previous research focused on LLM Watermark, Adversarial Attack, Fairness and AI safety. Now, my research interests are primarily in Generative Reward Model, Open-ended Tasks (like Writing and Role-Play), LLM-as-a-Judge and LLM Evaluation.
+I'm Zongqi Wang. I am currently a first-year master's student supervised by [Prof.Yang](https://www.sigs.tsinghua.edu.cn/yyj/list.htm) at Tsinghua University. I received my bachelor's degree from Xidian University. My previous research focused on LLM Watermark, Adversarial Attack, Fairness and AI safety. Now, my research interests are primarily in Generative Reward Model, RL, Open-ended Tasks (like Writing and Role-Play), LLM-as-a-Judge and LLM Evaluation.
 
 
 # 🔥 News
-- *2025.05*: 🎉🎉 We are excited to release our new paper: "From Rankings to Insights: Evaluation Should Shift Focus from Leaderboard to Feedback".
+- *2025.05*: 🎉🎉 We are excited to release our new paper: "SCAN: Structured Capability Assessment and Navigation for LLMs".
 - *2025.05*: 🎉🎉 Our **two papers** about LLM watermark are accepted to **ACL 2025**. 
 
 # 📝 Publications 
 
-* From Rankings to Insights: Evaluation Should Shift Focus from Leaderboard to Feedback
+* SCAN: Structured Capability Assessment and Navigation for LLMs
   * **Zongqi Wang**, Tianle Gu, Chen Gong, Xin Tian, Siqi Bao, Yujiu Yang
   * arXiv 2025.05 [[project](https://liudan193.github.io/Feedbacker/)][[pdf](https://arxiv.org/abs/2505.06698)][[code](https://github.com/liudan193/Feedbacker)]
 
@@ -35,11 +35,6 @@ I'm Zongqi Wang. I am currently a first-year master's student supervised by [Pro
 * Thinking Racial Bias in Fair Forgery Detection: Models, Datasets and Evaluations
   * Decheng Liu\*, **Zongqi Wang\***, Chunlei Peng, Nannan Wang, Ruimin Hu, Xinbo Gao
   * AAAI 2025 [[pdf](https://arxiv.org/abs/2407.14367)][[code](https://github.com/liudan193/Fairness-Benchmark-for-Face-Forgery-Detection-AAAI2025)]
-
-# 🎖 Honors and Awards
-- *2024.05* Outstanding graduate in Xidian University
-- *2022.09* National scholarship
-- *2022.09* Top scholarship in Xidian University
 
 # 💻 Internships
 - *2024.12 - 2025.05*, Baidu ERNIE Bot (文心一言).
