@@ -11,14 +11,18 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # About me
-I'm Zongqi Wang. I am currently a first-year master's student supervised by [Prof.Yang](https://www.sigs.tsinghua.edu.cn/yyj/list.htm) at Tsinghua University. I received my bachelor's degree from Xidian University. My previous research focused on LLM Watermark, Adversarial Attack, Fairness and AI safety. Now, my research interests are primarily in Generative Reward Model, RL, Open-ended Tasks (like Writing and Role-Play), LLM-as-a-Judge and LLM Evaluation.
-
+I'm Zongqi Wang. I am currently a second-year master's student supervised by [Prof.Yang](https://www.sigs.tsinghua.edu.cn/yyj/list.htm) at Tsinghua University. I received my bachelor's degree from Xidian University. My previous research focused on LLM Watermark, Adversarial Attack, Fairness and AI safety. Now, my research interests are primarily in Generative Reward Model, RL, Role-Playing, LLM-as-a-Judge and LLM Evaluation.
 
 # 🔥 News
+- *2026.01*: 🎉🎉 We are excited to release our new paper: "Reward Modeling from Natural Language Human Feedback".
 - *2025.05*: 🎉🎉 We are excited to release our new paper: "SCAN: Structured Capability Assessment and Navigation for LLMs".
-- *2025.05*: 🎉🎉 Our **two papers** about LLM watermark are accepted to **ACL 2025**. 
+- *2025.05*: 🎉🎉 Our **2 papers** about LLM watermark are accepted to **ACL 2025**. 
 
 # 📝 Publications 
+
+* Reward Modeling from Natural Language Human Feedback
+  * **Zongqi Wang**, Rui Wang, Yuchuan Wu, Yiyao Yu, Pinyi Zhang, Shaoning Sun, Yujiu Yang, Yongbin Li
+  * arXiv 2026.01 [[pdf](https://arxiv.org/abs/2601.07349)]
 
 * SCAN: Structured Capability Assessment and Navigation for LLMs
   * **Zongqi Wang**, Tianle Gu, Chen Gong, Xin Tian, Siqi Bao, Yujiu Yang
@@ -38,7 +42,7 @@ I'm Zongqi Wang. I am currently a first-year master's student supervised by [Pro
 
 # 💻 Internships
 - *2024.12 - 2025.05*, Baidu ERNIE Bot (文心一言).
-- *2025.06 - present*, Alibaba Tongyi Lab (通义).
+- *2025.06 - present*, Alibaba Tongyi Lab (通义实验室).
 
 # 📖 Educations
 - *2024.09 - 2027.06*, Master's degree (Expected), Tsinghua University
