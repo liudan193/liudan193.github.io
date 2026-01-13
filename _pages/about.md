@@ -11,7 +11,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # About me
-I'm Zongqi Wang. I am currently a second-year master's student supervised by [Prof.Yang](https://www.sigs.tsinghua.edu.cn/yyj/list.htm) at Tsinghua University. I received my bachelor's degree from Xidian University. My previous research focused on LLM Watermark, Adversarial Attack, Fairness and AI safety. Now, my research interests are primarily in Generative Reward Model, RL, Role-Playing, LLM-as-a-Judge and LLM Evaluation.
+I'm Zongqi Wang. I am currently a second-year master's student supervised by [Prof.Yang](https://www.sigs.tsinghua.edu.cn/yyj/list.htm) at Tsinghua University. I received my bachelor's degree from Xidian University. My previous research focused on LLM Safety. Now, my research interests are primarily in Generative Reward Model, RL, Role-Playing, LLM-as-a-Judge and LLM Evaluation.
 
 # 🔥 News
 - *2026.01*: 🎉🎉 We are excited to release our new paper: "Reward Modeling from Natural Language Human Feedback".
