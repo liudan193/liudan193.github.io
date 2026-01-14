@@ -53,8 +53,8 @@ I'm Zongqi Wang. I am currently a second-year master's student supervised by [Pr
   * AAAI 2025 [[pdf](https://arxiv.org/abs/2407.14367)][[code](https://github.com/liudan193/Fairness-Benchmark-for-Face-Forgery-Detection-AAAI2025)]
 
 # 💻 Internships
-- *2024.12 - 2025.05*, Baidu ERNIE Bot (文心一言).
 - *2025.06 - present*, Alibaba Tongyi Lab (通义实验室).
+- *2024.12 - 2025.05*, Baidu ERNIE Bot (文心一言).
 
 # 📖 Educations
 - *2024.09 - 2027.06*, Master's degree (Expected), Tsinghua University
