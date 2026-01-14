@@ -20,14 +20,26 @@ I'm Zongqi Wang. I am currently a second-year master's student supervised by [Pr
 
 # 📝 Publications 
 
+## Reward Modeling & Evaluation
+
 * Reward Modeling from Natural Language Human Feedback
   * **Zongqi Wang**, Rui Wang, Yuchuan Wu, Yiyao Yu, Pinyi Zhang, Shaoning Sun, Yujiu Yang, Yongbin Li
   * arXiv 2026.01 [[pdf](https://arxiv.org/abs/2601.07349)]
+
+* S2J: Bridging the Gap Between Solving and Judging Ability in Generative Reward Models
+  * Shaoning Sun\*, Jiachen Yu\*, **Zongqi Wang\***, Xuewei Yang, Tianle Gu, Yujiu Yang
+  * arXiv 2025.09 [[pdf](https://arxiv.org/abs/2509.22099)]
 
 * SCAN: Structured Capability Assessment and Navigation for LLMs
   * **Zongqi Wang**, Tianle Gu, Chen Gong, Xin Tian, Siqi Bao, Yujiu Yang
   * arXiv 2025.05 [[project](https://liudan193.github.io/Feedbacker/)][[pdf](https://arxiv.org/abs/2505.06698)][[code](https://github.com/liudan193/Feedbacker)]
 
+## AI Safety
+
+* Invisible Entropy: Towards Safe and Efficient Low-Entropy LLM Watermarking
+  * Tianle Gu\*, **Zongqi Wang\***, Kexin Huang, Yuanqi Yao, Xiangliang Zhang, Yujiu Yang, Xiuying Chen
+  * EMNLP 2025 Main (Oral) [[pdf](https://arxiv.org/abs/2505.14112)][[code](https://github.com/Carol-gutianle/IE)]
+    
 * MorphMark: Flexible Adaptive Watermarking for Large Language Models
   * **Zongqi Wang**, Tianle Gu, Baoyuan Wu, Yujiu Yang
   * ACL 2025 Main [[pdf](https://arxiv.org/abs/2505.11541)][[code](https://github.com/liudan193/MarkLLM)]
