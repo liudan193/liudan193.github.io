@@ -11,7 +11,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # About me
-I'm Zongqi Wang. I am currently a second-year master's student supervised by [Prof.Yang](https://www.sigs.tsinghua.edu.cn/yyj/list.htm) at Tsinghua University. I received my bachelor's degree from Xidian University. My previous research focused on LLM Safety. Now, my research interests are primarily in LLM, Reinforcement Learning, Reward Model, Character Model, Role-Playing, LLM-as-a-Judge and LLM Evaluation.
+I'm Zongqi Wang. I am currently a second-year master's student supervised by [Prof.Yang](https://www.sigs.tsinghua.edu.cn/yyj/list.htm) at Tsinghua University. I received my bachelor's degree from Xidian University. My previous research focused on AI Safety. Now, my research interests are primarily in Large Language Model, Reinforcement Learning, Reward Model, Character Model, Role-Playing, LLM-as-a-Judge and LLM Evaluation.
 
 # 🔥 News
 - *2026.01*: 🎉🎉 We are excited to release our new paper: "Reward Modeling from Natural Language Human Feedback".
@@ -20,7 +20,7 @@ I'm Zongqi Wang. I am currently a second-year master's student supervised by [Pr
 
 # 📝 Publications 
 
-## Reward Modeling & Evaluation
+## ⚖️ Reward Model
 
 * Reward Modeling from Natural Language Human Feedback
   * **Zongqi Wang**, Rui Wang, Yuchuan Wu, Yiyao Yu, Pinyi Zhang, Shaoning Sun, Yujiu Yang, Yongbin Li
@@ -34,7 +34,7 @@ I'm Zongqi Wang. I am currently a second-year master's student supervised by [Pr
   * **Zongqi Wang**, Tianle Gu, Chen Gong, Xin Tian, Siqi Bao, Yujiu Yang
   * arXiv 2025.05 [[project](https://liudan193.github.io/Feedbacker/)][[pdf](https://arxiv.org/abs/2505.06698)][[code](https://github.com/liudan193/Feedbacker)]
 
-## AI Safety
+## 🛡️ AI Safety
 
 * Invisible Entropy: Towards Safe and Efficient Low-Entropy LLM Watermarking
   * Tianle Gu\*, **Zongqi Wang\***, Kexin Huang, Yuanqi Yao, Xiangliang Zhang, Yujiu Yang, Xiuying Chen
