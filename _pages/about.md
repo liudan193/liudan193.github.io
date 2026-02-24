@@ -26,6 +26,10 @@ I'm Zongqi Wang. I am currently a second-year master's student supervised by [Pr
   * **Zongqi Wang**, Rui Wang, Yuchuan Wu, Yiyao Yu, Pinyi Zhang, Shaoning Sun, Yujiu Yang, Yongbin Li
   * arXiv 2026.01 [[pdf](https://arxiv.org/abs/2601.07349)]
 
+* P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling
+  * Pinyi Zhang, Ting-En Lin, Yuchuan Wu, Jingyang Chen, **Zongqi Wang**, Hua Yang, Ze Xu, Fei Huang, Kai Zhang, Yongbin Li
+  * ICLR 2026 oral [[pdf](https://arxiv.org/abs/2602.12116)]
+
 * S2J: Bridging the Gap Between Solving and Judging Ability in Generative Reward Models
   * Shaoning Sun\*, Jiachen Yu\*, **Zongqi Wang\***, Xuewei Yang, Tianle Gu, Yujiu Yang
   * arXiv 2025.09 [[pdf](https://arxiv.org/abs/2509.22099)]
@@ -35,6 +39,10 @@ I'm Zongqi Wang. I am currently a second-year master's student supervised by [Pr
   * arXiv 2025.05 [[project](https://liudan193.github.io/Feedbacker/)][[pdf](https://arxiv.org/abs/2505.06698)][[code](https://github.com/liudan193/Feedbacker)]
 
 ## 🛡️ AI Safety
+
+* Probing the robustness of large language models safety to latent perturbations
+  * Tianle Gu, Kexin Huang, **Zongqi Wang**, Yixu Wang, Jie Li, Yuanqi Yao, Yang Yao, Yujiu Yang, Yan Teng, Yingchun Wang
+  * arXiv 2025.06 [[pdf](https://arxiv.org/abs/2506.16078)]
 
 * Invisible Entropy: Towards Safe and Efficient Low-Entropy LLM Watermarking
   * Tianle Gu\*, **Zongqi Wang\***, Kexin Huang, Yuanqi Yao, Xiangliang Zhang, Yujiu Yang, Xiuying Chen
@@ -53,8 +61,8 @@ I'm Zongqi Wang. I am currently a second-year master's student supervised by [Pr
   * AAAI 2025 [[pdf](https://arxiv.org/abs/2407.14367)][[code](https://github.com/liudan193/Fairness-Benchmark-for-Face-Forgery-Detection-AAAI2025)]
 
 # 💻 Internships
-- *2025.06 - present*, Alibaba Tongyi Lab (通义实验室).
-- *2024.12 - 2025.05*, Baidu ERNIE Bot (文心一言).
+- *2025.06 - present*, Alibaba Qwen Character.
+- *2024.12 - 2025.05*, Baidu ERNIE Bot NLP.
 
 # 📖 Educations
 - *2024.09 - 2027.06*, Master's degree (Expected), Tsinghua University
