@@ -28,7 +28,7 @@ I'm Zongqi Wang. I am currently a second-year master's student supervised by [Pr
 
 * P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling
   * Pinyi Zhang, Ting-En Lin, Yuchuan Wu, Jingyang Chen, **Zongqi Wang**, Hua Yang, Ze Xu, Fei Huang, Kai Zhang, Yongbin Li
-  * ICLR 2026 oral [[pdf](https://arxiv.org/abs/2602.12116)]
+  * ICLR 2026 (Oral) [[pdf](https://arxiv.org/abs/2602.12116)]
 
 * S2J: Bridging the Gap Between Solving and Judging Ability in Generative Reward Models
   * Shaoning Sun\*, Jiachen Yu\*, **Zongqi Wang\***, Xuewei Yang, Tianle Gu, Yujiu Yang
