@@ -38,7 +38,7 @@ I'm Zongqi Wang. I am currently a second-year master's student supervised by [Pr
   * **Zongqi Wang**, Tianle Gu, Chen Gong, Xin Tian, Siqi Bao, Yujiu Yang
   * arXiv 2025.05 [[project](https://liudan193.github.io/Feedbacker/)][[pdf](https://arxiv.org/abs/2505.06698)][[code](https://github.com/liudan193/Feedbacker)]
 
-## 🛡️ AI Safety
+## 🛡️ LLM Safety
 
 * Probing the robustness of large language models safety to latent perturbations
   * Tianle Gu, Kexin Huang, **Zongqi Wang**, Yixu Wang, Jie Li, Yuanqi Yao, Yang Yao, Yujiu Yang, Yan Teng, Yingchun Wang
