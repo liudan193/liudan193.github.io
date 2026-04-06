@@ -11,12 +11,13 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # About me
-I'm Zongqi Wang. I am currently a second-year master's student supervised by [Prof.Yang](https://www.sigs.tsinghua.edu.cn/yyj/list.htm) at Tsinghua University. I received my bachelor's degree from Xidian University. My previous research focused on AI Safety. Now, my research interests are primarily in Large Language Model, Reinforcement Learning, Reward Model, Character Model, Role-Playing, LLM-as-a-Judge and LLM Evaluation.
+I'm Zongqi Wang. I am currently a second-year master's student supervised by [Prof.Yang](https://www.sigs.tsinghua.edu.cn/yyj/list.htm) at Tsinghua University. I received my bachelor's degree from Xidian University. My previous research focused on AI Safety. Now, my research interests are primarily in Large Language Model, Reinforcement Learning, Reward Model, Generative Reward Model, Evaluation and Role-Playing.
 
 # 🔥 News
-- *2026.01*: 🎉🎉 We are excited to release our new paper: "Reward Modeling from Natural Language Human Feedback".
-- *2025.05*: 🎉🎉 We are excited to release our new paper: "SCAN: Structured Capability Assessment and Navigation for LLMs".
-- *2025.05*: 🎉🎉 Our **2 papers** about LLM watermark are accepted to **ACL 2025**. 
+- *2026.04*: 🎉🎉 **2 papers** about Reward Model and LLM safety are accepted to **ACL 2026 Main**.
+- *2026.01*: 🎉🎉 **1 paper** about Reward Model is accepted to **ICLR 2026 oral**.
+- *2025.08*: 🎉🎉 **1 paper** about LLM safety is accepted to **EMNLP 2026 oral**.
+- *2025.05*: 🎉🎉 **2 papers** about LLM safety are accepted to **ACL 2025 Main and Findings**. 
 
 # 📝 Publications 
 
@@ -36,13 +37,13 @@ I'm Zongqi Wang. I am currently a second-year master's student supervised by [Pr
 
 * SCAN: Structured Capability Assessment and Navigation for LLMs
   * **Zongqi Wang**, Tianle Gu, Chen Gong, Xin Tian, Siqi Bao, Yujiu Yang
-  * arXiv 2025.05 [[project](https://liudan193.github.io/Feedbacker/)][[pdf](https://arxiv.org/abs/2505.06698)][[code](https://github.com/liudan193/Feedbacker)]
+  * ACL 2026 Main [[project](https://liudan193.github.io/Feedbacker/)][[pdf](https://arxiv.org/abs/2505.06698)][[code](https://github.com/liudan193/Feedbacker)]
 
 ## 🛡️ LLM Safety
 
 * Probing the robustness of large language models safety to latent perturbations
   * Tianle Gu, Kexin Huang, **Zongqi Wang**, Yixu Wang, Jie Li, Yuanqi Yao, Yang Yao, Yujiu Yang, Yan Teng, Yingchun Wang
-  * arXiv 2025.06 [[pdf](https://arxiv.org/abs/2506.16078)]
+  * ACL 2026 Main [[pdf](https://arxiv.org/abs/2506.16078)]
 
 * Invisible Entropy: Towards Safe and Efficient Low-Entropy LLM Watermarking
   * Tianle Gu\*, **Zongqi Wang\***, Kexin Huang, Yuanqi Yao, Xiangliang Zhang, Yujiu Yang, Xiuying Chen
