@@ -27,6 +27,10 @@ I'm Zongqi Wang. I am currently a second-year master's student supervised by [Pr
   * **Zongqi Wang**, Rui Wang, Yuchuan Wu, Yiyao Yu, Pinyi Zhang, Shaoning Sun, Yujiu Yang, Yongbin Li
   * arXiv 2026.01 [[pdf](https://arxiv.org/abs/2601.07349)]
 
+* From Sparse Decisions to Dense Reasoning: A Multi-attribute Trajectory Paradigm for Multimodal Moderation
+  * Tianle Gu, Kexin Huang, Lingyu Li, Ruilin Luo, Shiyang Huang, **Zongqi Wang**, Yujiu Yang, Yan Teng, Yingchun Wang
+  * arXiv 2026.02 [[pdf](https://arxiv.org/abs/2602.02536)]
+
 * P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling
   * Pinyi Zhang, Ting-En Lin, Yuchuan Wu, Jingyang Chen, **Zongqi Wang**, Hua Yang, Ze Xu, Fei Huang, Kai Zhang, Yongbin Li
   * ICLR 2026 (Oral) [[pdf](https://arxiv.org/abs/2602.12116)]
