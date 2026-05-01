@@ -67,7 +67,7 @@ I'm Zongqi Wang. I am currently a second-year master's student supervised by [Pr
   * AAAI 2025 [[pdf](https://arxiv.org/abs/2407.14367)][[code](https://github.com/liudan193/Fairness-Benchmark-for-Face-Forgery-Detection-AAAI2025)]
 
 # 💻 Internships
-- *2025.06 - present*, Alibaba Qwen Character.
+- *2025.06 - 2026.04*, Alibaba Qwen Character.
 - *2024.12 - 2025.05*, Baidu ERNIE Bot NLP.
 
 # 📖 Educations
