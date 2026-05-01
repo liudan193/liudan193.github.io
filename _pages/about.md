@@ -14,6 +14,7 @@ redirect_from:
 I'm Zongqi Wang. I am currently a second-year master's student supervised by [Prof.Yang](https://www.sigs.tsinghua.edu.cn/yyj/list.htm) at Tsinghua University. I received my bachelor's degree from Xidian University. My previous research focused on AI Safety. Now, my research interests are primarily in Large Language Model, Reinforcement Learning, Reward Model, Generative Reward Model, Evaluation and Role-Playing.
 
 # 🔥 News
+- *2026.05*: 🎉🎉 **1 paper** about Reward Model is accepted to **ICML 2026**.
 - *2026.04*: 🎉🎉 **2 papers** about Reward Model and LLM safety are accepted to **ACL 2026 Main**.
 - *2026.01*: 🎉🎉 **1 paper** about Reward Model is accepted to **ICLR 2026 oral**.
 - *2025.08*: 🎉🎉 **1 paper** about LLM safety is accepted to **EMNLP 2026 oral**.
@@ -25,7 +26,7 @@ I'm Zongqi Wang. I am currently a second-year master's student supervised by [Pr
 
 * Reward Modeling from Natural Language Human Feedback
   * **Zongqi Wang**, Rui Wang, Yuchuan Wu, Yiyao Yu, Pinyi Zhang, Shaoning Sun, Yujiu Yang, Yongbin Li
-  * arXiv 2026.01 [[pdf](https://arxiv.org/abs/2601.07349)]
+  * ICML 2026 [[pdf](https://arxiv.org/abs/2601.07349)]
 
 * From Sparse Decisions to Dense Reasoning: A Multi-attribute Trajectory Paradigm for Multimodal Moderation
   * Tianle Gu, Kexin Huang, Lingyu Li, Ruilin Luo, Shiyang Huang, **Zongqi Wang**, Yujiu Yang, Yan Teng, Yingchun Wang
