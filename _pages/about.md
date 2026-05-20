@@ -15,7 +15,7 @@ I'm Zongqi Wang. I am currently a second-year master's student supervised by [Pr
 
 # 🔥 News
 - *2026.05*: 🎉🎉 **1 paper** about Reward Model is accepted to **ICML 2026**.
-- *2026.04*: 🎉🎉 **2 papers** about Reward Model and LLM safety are accepted to **ACL 2026 Main**.
+- *2026.04*: 🎉🎉 **2 papers** about Reward Model and LLM safety are accepted to **ACL 2026 Main (1 oral)**.
 - *2026.01*: 🎉🎉 **1 paper** about Reward Model is accepted to **ICLR 2026 oral**.
 - *2025.08*: 🎉🎉 **1 paper** about LLM safety is accepted to **EMNLP 2026 oral**.
 - *2025.05*: 🎉🎉 **2 papers** about LLM safety are accepted to **ACL 2025 Main and Findings**. 
@@ -42,7 +42,7 @@ I'm Zongqi Wang. I am currently a second-year master's student supervised by [Pr
 
 * SCAN: Structured Capability Assessment and Navigation for LLMs
   * **Zongqi Wang**, Tianle Gu, Chen Gong, Xin Tian, Siqi Bao, Yujiu Yang
-  * ACL 2026 Main [[project](https://liudan193.github.io/Feedbacker/)][[pdf](https://arxiv.org/abs/2505.06698)][[code](https://github.com/liudan193/Feedbacker)]
+  * ACL 2026 Main (Oral) [[project](https://liudan193.github.io/Feedbacker/)][[pdf](https://arxiv.org/abs/2505.06698)][[code](https://github.com/liudan193/Feedbacker)]
 
 ## 🛡️ LLM Safety
 
