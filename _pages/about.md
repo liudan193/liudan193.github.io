@@ -13,6 +13,8 @@ redirect_from:
 # About me
 I'm Zongqi Wang. I am currently a second-year master's student supervised by [Prof.Yang](https://www.sigs.tsinghua.edu.cn/yyj/list.htm) at Tsinghua University. I received my bachelor's degree from Xidian University. My previous research focused on AI Safety. Now, my research interests are primarily in Large Language Model, Reinforcement Learning, Reward Model, Generative Reward Model, Evaluation and Role-Playing.
 
+**I will be in San Diego for ACL 2026 from July 2nd to July 7th. Welcome to connect.**
+
 # 🔥 News
 - *2026.05*: 🎉🎉 **1 paper** about Reward Model is accepted to **ICML 2026**.
 - *2026.04*: 🎉🎉 **2 papers** about Reward Model and LLM safety are accepted to **ACL 2026 Main (1 oral)**.
